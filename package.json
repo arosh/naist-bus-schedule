@@ -6,6 +6,11 @@
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
     "onsenui": "^2.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -15,6 +20,16 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js --fix src || true"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": "off"
+    }
   }
 }

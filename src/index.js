@@ -17,28 +17,30 @@ class App extends React.Component {
   onChange() {
     this.setState({
       checked: !this.state.checked,
-    })
+    });
   }
   render() {
     return (
-      <Page renderToolbar={() =>
-        <Toolbar>
-          <div className="left">
-            <BackButton>Back</BackButton>
-          </div>
-          <div className="center">Title</div>
-          <div className="right">
-            <ToolbarButton>
-              <Icon icon="md-menu" />
-            </ToolbarButton>
-          </div>
-        </Toolbar>}
+      <Page
+        renderToolbar={() =>
+          <Toolbar>
+            <div className="left">
+              <BackButton>Back</BackButton>
+            </div>
+            <div className="center">Title</div>
+            <div className="right">
+              <ToolbarButton>
+                <Icon icon="md-menu" />
+              </ToolbarButton>
+            </div>
+          </Toolbar>}
       >
         <Input
           value={this.state.text} float
-          onChange={(event) => { this.setState({text: event.target.value})} }
-          modifier='material'
-          placeholder='Username' />
+          onChange={(event) => { this.setState({ text: event.target.value }); }}
+          modifier="material"
+          placeholder="Username"
+        />
         <Input type="checkbox" checked={this.state.checked} onChange={this.onChange} />
       </Page>
     );
@@ -47,5 +49,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('react-root')
+  document.getElementById('react-root'),
 );
