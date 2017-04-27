@@ -6,8 +6,10 @@
     "react-scripts": "0.9.5"
   },
   "dependencies": {
+    "onsenui": "^2.2.5",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-onsenui": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
