@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "flow-bin": "^0.45.0",
-    "gh-pages": "^0.12.0",
+    "gh-pages": "^1.0.0",
     "prettier-eslint": "^6.2.0",
     "prettier-eslint-cli": "^3.4.3",
     "react-scripts": "0.9.5"
