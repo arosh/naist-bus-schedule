@@ -1,7 +1,16 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ons from 'onsenui';
-import { Page, Toolbar, BackButton, ToolbarButton, Icon, Input } from 'react-onsenui';
+import {
+  Page,
+  Toolbar,
+  BackButton,
+  ToolbarButton,
+  Icon,
+  Input,
+} from 'react-onsenui';
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.min.css';
 
@@ -12,9 +21,8 @@ class App extends React.Component {
       text: '',
       checked: false,
     };
-    this.onChange = this.onChange.bind(this);
   }
-  onChange() {
+  onChange = () => {
     this.setState({
       checked: !this.state.checked,
     });
@@ -22,7 +30,7 @@ class App extends React.Component {
   render() {
     return (
       <Page
-        renderToolbar={() =>
+        renderToolbar={() => (
           <Toolbar>
             <div className="left">
               <BackButton>Back</BackButton>
@@ -33,21 +41,26 @@ class App extends React.Component {
                 <Icon icon="md-menu" />
               </ToolbarButton>
             </div>
-          </Toolbar>}
+          </Toolbar>
+        )}
       >
         <Input
-          value={this.state.text} float
-          onChange={(event) => { this.setState({ text: event.target.value }); }}
+          value={this.state.text}
+          float
+          onChange={event => {
+            this.setState({text: event.target.value});
+          }}
           modifier="material"
           placeholder="Username"
         />
-        <Input type="checkbox" checked={this.state.checked} onChange={this.onChange} />
+        <Input
+          type="checkbox"
+          checked={this.state.checked}
+          onChange={this.onChange}
+        />
       </Page>
     );
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('react-root'),
-);
+ReactDOM.render(<App />, document.getElementById('react-root'));
