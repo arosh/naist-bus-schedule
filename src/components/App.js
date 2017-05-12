@@ -18,7 +18,7 @@ export default class App extends React.Component {
   constructor(props?: any) {
     super(props);
     this.state = {
-      direction: 'from',
+      direction: 'to',
       busStop: 'kitaikoma',
       timetable: 'weekday',
       schedule: [],
