@@ -3,5 +3,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import BusScheduleService from './services/BusScheduleService';
 
-ReactDOM.render(<App />, document.getElementById('react-root'));
+const busSchedule = new BusScheduleService();
+
+ReactDOM.render(
+  <App busScheduleService={busSchedule} />,
+  document.getElementById('react-root')
+);
