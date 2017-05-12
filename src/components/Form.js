@@ -11,6 +11,7 @@ export default (props: {
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 control-label">
+        {/* glyphicon-transferと迷う… */}
         <span className="glyphicon glyphicon-sort" /> Direction
       </label>
       <div className="col-sm-10">

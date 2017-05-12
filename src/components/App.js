@@ -18,6 +18,7 @@ export default class App extends React.Component {
   constructor(props?: any) {
     super(props);
     this.state = {
+      // 初めてアプリを触る人はNAIST行きの時刻を知りたいはず
       direction: 'to',
       busStop: 'kitaikoma',
       timetable: 'weekday',
