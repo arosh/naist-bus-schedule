@@ -11,10 +11,8 @@
     "string.prototype.padstart": "^3.0.0"
   },
   "dependencies": {
-    "onsenui": "^2.2.5",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-onsenui": "^1.2.0"
+    "react-dom": "^15.5.4"
   },
   "scripts": {
     "start": "react-scripts start",

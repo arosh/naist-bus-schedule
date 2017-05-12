@@ -3896,10 +3896,6 @@ onetime@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/onetime/-/onetime-1.1.0.tgz#a1f7838f8314c516f05ecefcbc4ccfe04b4ed789"
 
-onsenui@^2.2.5:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/onsenui/-/onsenui-2.2.6.tgz#a5847389469c69fd814976aa0f82de241f0327e3"
-
 open@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
@@ -4561,10 +4557,6 @@ react-dom@^15.5.4:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "~15.5.7"
-
-react-onsenui@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-onsenui/-/react-onsenui-1.2.0.tgz#7f74e50397a7ec38f4d55353e26005b5e6045622"
 
 react-scripts@0.9.5:
   version "0.9.5"
