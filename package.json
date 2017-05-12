@@ -21,5 +21,6 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow"
-  }
+  },
+  "homepage": "https://arosh.github.io/naist-bus-schedule/"
 }
