@@ -10,8 +10,10 @@ export default (props: {
 }) => (
   <form className="form-horizontal">
     <div className="form-group">
-      <label className="col-xs-3 control-label">Direction</label>
-      <div className="col-xs-9">
+      <label className="col-sm-2 control-label">
+        <span className="glyphicon glyphicon-sort" /> Direction
+      </label>
+      <div className="col-sm-10">
         <select
           className="form-control"
           value={props.direction}
@@ -25,8 +27,10 @@ export default (props: {
       </div>
     </div>
     <div className="form-group">
-      <label className="col-xs-3 control-label">Bus Stop</label>
-      <div className="col-xs-9">
+      <label className="col-sm-2 control-label">
+        <i className="fa fa-bus" aria-hidden="true" /> Bus Stop
+      </label>
+      <div className="col-sm-10">
         <select
           className="form-control"
           value={props.busStop}
@@ -40,8 +44,10 @@ export default (props: {
       </div>
     </div>
     <div className="form-group">
-      <label className="col-xs-3 control-label">Timetable</label>
-      <div className="col-xs-9">
+      <label className="col-sm-2 control-label">
+        <span className="glyphicon glyphicon-calendar" /> Timetable
+      </label>
+      <div className="col-sm-10">
         <select
           value={props.timetable}
           className="form-control"
