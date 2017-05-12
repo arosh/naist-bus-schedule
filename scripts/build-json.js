@@ -5,7 +5,7 @@ const fs = require('mz/fs');
 // padStartのpolyfill
 require('string.prototype.padstart').shim();
 
-function parseCsv(content /*: string*/) /*: string[]*/ {
+function parseCsv(content /*:string*/) /*:string[]*/ {
   const retval = [];
   const lines = content.split('\n');
   // 時刻表は5時から24時まであるので24-5+1行ある
