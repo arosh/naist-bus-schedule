@@ -31,21 +31,20 @@ const filenames = [
   'resources/to-kitaikoma-weekend.csv',
 ];
 
-let promise = Promise.resolve();
-
-for (const filename of filenames) {
-  promise = promise.then(
-    () =>
-      new Promise((resolve, reject) => {
-        fs.readFile(filename, (err, data) => {
-          if (err) {
-            reject(err);
-          }
-          const content = data.toString();
-          console.log(filename);
-          console.log(parseCsv(content));
-          resolve();
-        });
-      })
-  );
+async function run() {
+  for (const filename of filenames) {
+    await new Promise((resolve, reject) => {
+      fs.readFile(filename, (err, data) => {
+        if (err) {
+          reject(err);
+        }
+        const content = data.toString();
+        console.log(filename);
+        console.log(parseCsv(content));
+        resolve();
+      });
+    });
+  }
 }
+
+run().then(() => {});
