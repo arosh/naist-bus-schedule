@@ -26,7 +26,7 @@ class App extends React.Component {
     this.setState({
       checked: !this.state.checked,
     });
-  }
+  };
   render() {
     return (
       <Page

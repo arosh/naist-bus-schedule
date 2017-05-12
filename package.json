@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "flow-bin": "^0.45.0",
+    "flow-bin": "^0.46.0",
     "gh-pages": "^1.0.0",
     "prettier-eslint": "^6.2.0",
     "prettier-eslint-cli": "^3.4.3",
@@ -13,12 +13,13 @@
     "onsenui": "^2.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-onsenui": "^1.2.0"
+    "react-onsenui": "^1.2.0",
+    "string.prototype.padstart": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "prettier-eslint --write \"src/**/*.js\"",
+    "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\"",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow"
