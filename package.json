@@ -5,16 +5,16 @@
   "devDependencies": {
     "flow-bin": "^0.46.0",
     "gh-pages": "^1.0.0",
-    "prettier-eslint": "^6.2.0",
+    "mz": "^2.6.0",
     "prettier-eslint-cli": "^3.4.3",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "string.prototype.padstart": "^3.0.0"
   },
   "dependencies": {
     "onsenui": "^2.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-onsenui": "^1.2.0",
-    "string.prototype.padstart": "^3.0.0"
+    "react-onsenui": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

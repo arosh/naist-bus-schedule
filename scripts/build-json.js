@@ -1,14 +1,17 @@
 // @flow
 
-const fs = require('fs');
-const padStart = require('string.prototype.padstart');
-padStart.shim();
+// fsをPromise化したもの
+const fs = require('mz/fs');
+// padStartのpolyfill
+require('string.prototype.padstart').shim();
 
 function parseCsv(content /*: string*/) /*: string[]*/ {
   const retval = [];
   const lines = content.split('\n');
+  // 時刻表は5時から24時まであるので24-5+1行ある
   for (let i = 0; i < 24 - 5 + 1; i++) {
     const row = lines[i].split(',');
+    // 0列目は時, 1列目以降は分
     const prefix = row[0].trim().padStart(2, '0');
     for (let j = 1; j < row.length; j++) {
       const items = row[j].trim().split(/\s/);
@@ -31,20 +34,13 @@ const filenames = [
   'resources/to-kitaikoma-weekend.csv',
 ];
 
-async function run() {
+async function run()/*:Promise<void>*/ {
   for (const filename of filenames) {
-    await new Promise((resolve, reject) => {
-      fs.readFile(filename, (err, data) => {
-        if (err) {
-          reject(err);
-        }
-        const content = data.toString();
-        console.log(filename);
-        console.log(parseCsv(content));
-        resolve();
-      });
-    });
+    const data = await fs.readFile(filename)
+    const content = data.toString();
+    console.log(filename);
+    console.log(parseCsv(content));
   }
 }
 
-run().then(() => {});
+run().then(() => { });
