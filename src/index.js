@@ -59,6 +59,11 @@ const Form = (props: {
 );
 
 class App extends React.Component {
+  state: {
+    direction: string,
+    busStop: string,
+    timetable: string,
+  };
   constructor() {
     super();
     this.state = {
