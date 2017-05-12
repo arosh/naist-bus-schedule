@@ -27,20 +27,22 @@ function parseCsv(content /*: string*/) /*: string[]*/ {
   return retval;
 }
 
-const filenames = [
-  'resources/from-kitaikoma-weekday.csv',
-  'resources/from-kitaikoma-weekend.csv',
-  'resources/to-kitaikoma-weekday.csv',
-  'resources/to-kitaikoma-weekend.csv',
+const resourceNames = [
+  'from-kitaikoma-weekday',
+  'from-kitaikoma-weekend',
+  'to-kitaikoma-weekday',
+  'to-kitaikoma-weekend',
 ];
 
-async function run()/*:Promise<void>*/ {
-  for (const filename of filenames) {
-    const data = await fs.readFile(filename)
+async function run() /*:Promise<void>*/ {
+  const store = {};
+  for (const resourceName of resourceNames) {
+    const filename = `resources/${resourceName}.csv`;
+    const data = await fs.readFile(filename);
     const content = data.toString();
-    console.log(filename);
-    console.log(parseCsv(content));
+    store[resourceName] = parseCsv(content);
   }
+  await fs.writeFile('public/data.json', JSON.stringify(store));
 }
 
-run().then(() => { });
+run().then(() => {});
