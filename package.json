@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\"",
+    "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\" --prettier.single-quote --prettier.trailing-comma es5",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow"

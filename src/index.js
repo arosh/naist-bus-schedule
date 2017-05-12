@@ -48,7 +48,7 @@ class App extends React.Component {
           value={this.state.text}
           float
           onChange={event => {
-            this.setState({text: event.target.value});
+            this.setState({ text: event.target.value });
           }}
           modifier="material"
           placeholder="Username"
