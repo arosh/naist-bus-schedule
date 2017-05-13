@@ -40,7 +40,7 @@ export default (props: {
           }}
         >
           <option value="kitaikoma">Gakken Kita Ikoma</option>
-          {/*<option value="takanohara">Takanohara</option>*/}
+          <option value="takanohara">Takanohara</option>
         </select>
       </div>
     </div>

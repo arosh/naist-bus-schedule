@@ -32,6 +32,10 @@ const resourceNames = [
   'from-kitaikoma-weekend',
   'to-kitaikoma-weekday',
   'to-kitaikoma-weekend',
+  'from-takanohara-weekday',
+  'from-takanohara-weekend',
+  'to-takanohara-weekday',
+  'to-takanohara-weekend',
 ];
 
 async function run() /*:Promise<void>*/ {
