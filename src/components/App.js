@@ -4,6 +4,7 @@ import React from 'react';
 import Form from './Form';
 import List from './List';
 import BusScheduleService from '../services/BusScheduleService';
+import HolidayService from '../services/HolidayService';
 
 export default class App extends React.Component {
   props: {
@@ -17,11 +18,16 @@ export default class App extends React.Component {
   };
   constructor(props?: any) {
     super(props);
+    const holidayService = new HolidayService();
+    const timetable = holidayService.isTodayHoliday() ||
+      holidayService.isTodayWeekend()
+      ? 'weekend'
+      : 'weekday';
     this.state = {
       // 初めてアプリを触る人はNAIST行きの時刻を知りたいはず
       direction: 'to',
       busStop: 'kitaikoma',
-      timetable: 'weekday',
+      timetable,
       schedule: [],
     };
     this.updateSchedule();
