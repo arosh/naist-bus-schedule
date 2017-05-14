@@ -33,6 +33,7 @@ export default class App extends React.Component {
     this.updateSchedule();
   }
   updateSchedule = async () => {
+    // フォームのfrom, toとresourcesのfrom, toを間違えやすいので注意
     const direction = (this.state.direction === 'from' ? 'to' : 'from');
     const query = `${direction}-${this.state.busStop}-${this.state.timetable}`;
     const schedule = await this.props.busScheduleService.fetch(query);
