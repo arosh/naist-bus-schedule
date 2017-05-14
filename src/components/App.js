@@ -33,7 +33,8 @@ export default class App extends React.Component {
     this.updateSchedule();
   }
   updateSchedule = async () => {
-    const query = `${this.state.direction}-${this.state.busStop}-${this.state.timetable}`;
+    const direction = (this.state.direction === 'from' ? 'to' : 'from');
+    const query = `${direction}-${this.state.busStop}-${this.state.timetable}`;
     const schedule = await this.props.busScheduleService.fetch(query);
     this.setState({
       schedule,
