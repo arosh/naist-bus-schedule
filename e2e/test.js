@@ -27,11 +27,17 @@ class PageObject {
     );
   }
 
+  async setForms(direction, busStop, timetable) {
+    await this.setDirection(direction);
+    await this.setBusStop(busStop);
+    await this.setTimetable(timetable);
+  }
+
   async waitForListExists() {
     return this.browser.waitForExist('#react-root > div > div > ul');
   }
 
-  async searchList(target) {
+  async search(target) {
     return this.browser
       .element('#react-root > div > div > ul')
       .isExisting(`li=${target}`);
@@ -50,16 +56,26 @@ test.after.always(async t => {
   await browser.end();
 });
 
-test(async t => {
-  t.is(await browser.isExisting('body'), true);
+test.serial(async t => {
+  t.is(await browser.getTitle(), 'NAIST Bus Schedule');
 });
 
-test(async t => {
-  const page = new PageObject(browser);
-  await page.setDirection('From NAIST');
-  await page.setBusStop('Gakken Kita Ikoma');
-  await page.setTimetable('for weekday');
-  // await page.waitForListExists();
-  t.true(await page.searchList('06:16'));
-  t.false(await page.searchList('06:38'));
-});
+const data = [
+  ['To NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:38', '06:31'],
+  ['To NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:31', '06:58'],
+  ['To NAIST', 'Takanohara', 'for weekday', '05:45', '07:06'],
+  ['To NAIST', 'Takanohara', 'for weekend', '07:54', '08:45'],
+  ['From NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:52', '06:49'],
+  ['From NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:49', '06:52'],
+  ['From NAIST', 'Takanohara', 'for weekday', '06:17', '06:31'],
+  ['From NAIST', 'Takanohara', 'for weekend', '08:29', '06:31'],
+];
+
+for (const datum of data) {
+  test.serial(async t => {
+    const page = new PageObject(browser);
+    await page.setForms(datum[0], datum[1], datum[2]);
+    t.true(await page.search(datum[3]));
+    t.false(await page.search(datum[4]));
+  });
+}
