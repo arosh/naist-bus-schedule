@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "ava": "^0.19.1",
     "flow-bin": "^0.46.0",
     "gh-pages": "^1.0.0",
     "mz": "^2.6.0",
     "prettier-eslint-cli": "^3.4.3",
     "react-scripts": "0.9.5",
-    "string.prototype.padstart": "^3.0.0"
+    "selenium-standalone": "^6.4.1",
+    "string.prototype.padstart": "^3.0.0",
+    "webdriverio": "^4.8.0"
   },
   "dependencies": {
     "holiday_jp": "holiday-jp/holiday_jp-js",
@@ -16,12 +19,15 @@
     "react-dom": "^15.5.4"
   },
   "scripts": {
+    "postinstall": "selenium-standalone install",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\" --prettier.single-quote --prettier.trailing-comma es5",
+    "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\" \"e2e/**/*.js\" --prettier.single-quote --prettier.trailing-comma es5",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "flow": "flow"
+    "flow": "flow",
+    "selenium": "selenium-standalone start",
+    "e2e": "ava e2e/**/*.js"
   },
   "homepage": "https://arosh.github.io/naist-bus-schedule/"
 }
