@@ -19,14 +19,14 @@
     "react-dom": "^15.5.4"
   },
   "scripts": {
-    "postinstall": "selenium-standalone install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "prettier-eslint --write \"src/**/*.js\" \"scripts/**/*.js\" \"e2e/**/*.js\" --prettier.single-quote --prettier.trailing-comma es5",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
-    "selenium": "selenium-standalone start",
+    "install:selenium": "selenium-standalone install",
+    "start:selenium": "selenium-standalone start",
     "e2e": "ava e2e/**/*.js"
   },
   "homepage": "https://arosh.github.io/naist-bus-schedule/"
