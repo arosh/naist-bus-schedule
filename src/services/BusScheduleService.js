@@ -11,11 +11,7 @@ export default class BusScheduleService {
     if (this.store) {
       return this.store[key];
     }
-    const resp = await fetch('data.json');
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
-    }
-    this.store = await resp.json();
+    this.store = await import('../resources/data.json');
     return this.store[key];
   }
 }

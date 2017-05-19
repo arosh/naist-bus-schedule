@@ -46,7 +46,7 @@ async function run() /*:Promise<void>*/ {
     const content = data.toString();
     store[resourceName] = parseCsv(content);
   }
-  await fs.writeFile('public/data.json', JSON.stringify(store));
+  await fs.writeFile('src/resources/data.json', JSON.stringify(store));
 }
 
 run().then(() => {});
