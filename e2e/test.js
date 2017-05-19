@@ -63,10 +63,14 @@ test.serial(async t => {
 const data = [
   ['To NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:38', '06:31'],
   ['To NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:31', '06:58'],
+  ['To NAIST', 'Gakuemmae', 'for weekday', '07:06', '06:38'],
+  ['To NAIST', 'Gakuemmae', 'for weekend', '06:58', '06:31'],
   ['To NAIST', 'Takanohara', 'for weekday', '05:45', '07:06'],
   ['To NAIST', 'Takanohara', 'for weekend', '07:54', '08:45'],
   ['From NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:52', '06:49'],
   ['From NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:49', '06:52'],
+  ['From NAIST', 'Gakuemmae', 'for weekday', '06:16', '07:18'],
+  ['From NAIST', 'Gakuemmae', 'for weekend', '06:49', '06:16'],
   ['From NAIST', 'Takanohara', 'for weekday', '06:17', '06:31'],
   ['From NAIST', 'Takanohara', 'for weekend', '08:29', '06:31'],
 ];

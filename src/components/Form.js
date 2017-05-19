@@ -40,6 +40,7 @@ export default (props: {
           }}
         >
           <option value="kitaikoma">Gakken Kita Ikoma</option>
+          <option value="gakuemmae">Gakuemmae</option>
           <option value="takanohara">Takanohara</option>
         </select>
       </div>

@@ -36,6 +36,10 @@ const resourceNames = [
   'from-takanohara-weekend',
   'to-takanohara-weekday',
   'to-takanohara-weekend',
+  'from-gakuemmae-weekday',
+  'from-gakuemmae-weekend',
+  'to-gakuemmae-weekday',
+  'to-gakuemmae-weekend',
 ];
 
 async function run() /*:Promise<void>*/ {
