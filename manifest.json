@@ -1,5 +1,5 @@
 {
-  "short_name": "NAIST Bus",
+  "short_name": "NAIST Bus Schedule",
   "name": "NAIST Bus Schedule",
   "start_url": "./index.html",
   "display": "standalone",
