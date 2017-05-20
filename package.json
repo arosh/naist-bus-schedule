@@ -30,5 +30,5 @@
     "start:selenium": "selenium-standalone start",
     "e2e": "ava \"e2e/**/*.js\""
   },
-  "homepage": "."
+  "homepage": "https://arosh.github.io/naist-bus-schedule/"
 }
