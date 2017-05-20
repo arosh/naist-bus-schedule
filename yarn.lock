@@ -1099,7 +1099,7 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@6.23.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@~6.23.0:
+babel-runtime@6.23.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@~6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
@@ -2462,9 +2462,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-1.0.0.tgz#6e359dc5479eb5faeaecad3160d4f27c8a2e53d5"
+eslint-config-react-app@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-1.0.1.tgz#8ce98d0b05d7075711ad3971458ed1fb3ab88855"
 
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
@@ -5720,9 +5720,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dev-utils@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-1.0.0.tgz#c6585cf32e6c9d74a3b8032c448ea2148c3df3e0"
+react-dev-utils@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-1.0.1.tgz#3eee71e3a28d31810838d3464576b2b41b06052c"
   dependencies:
     "@timer/detect-port" "1.1.3"
     address "1.0.1"
@@ -5739,9 +5739,6 @@ react-dev-utils@^1.0.0:
     recursive-readdir "2.2.1"
     shell-quote "1.6.1"
     sockjs-client "1.1.4"
-    stack-frame-mapper "0.4.0"
-    stack-frame-parser "0.4.0"
-    stack-frame-unmapper "0.4.0"
     strip-ansi "3.0.1"
 
 react-dom@^15.5.4:
@@ -5753,19 +5750,20 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
-react-error-overlay@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.0.tgz#1820a750811853f9a142e7cd6866e665481c84f5"
+react-error-overlay@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.1.tgz#b22d7b28ce7c828cf407b1961e129a3b5a54baa2"
   dependencies:
     anser "1.2.5"
     babel-code-frame "6.22.0"
     babel-runtime "6.23.0"
-    react-dev-utils "^1.0.0"
+    react-dev-utils "^1.0.1"
     settle-promise "1.0.0"
+    source-map "0.5.6"
 
-react-scripts@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.0.tgz#273854bfed540d96505208c368933a3619ff5fb1"
+react-scripts@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.1.tgz#369e3fc8000e761b8fbbd232033e34c79902e580"
   dependencies:
     autoprefixer "7.1.0"
     babel-core "6.24.1"
@@ -5781,7 +5779,7 @@ react-scripts@1.0.0:
     css-loader "0.28.1"
     dotenv "4.0.0"
     eslint "3.19.0"
-    eslint-config-react-app "^1.0.0"
+    eslint-config-react-app "^1.0.1"
     eslint-loader "1.7.1"
     eslint-plugin-flowtype "2.33.0"
     eslint-plugin-import "2.2.0"
@@ -5797,8 +5795,8 @@ react-scripts@1.0.0:
     postcss-flexbugs-fixes "3.0.0"
     postcss-loader "2.0.5"
     promise "7.1.1"
-    react-dev-utils "^1.0.0"
-    react-error-overlay "^1.0.0"
+    react-dev-utils "^1.0.1"
+    react-error-overlay "^1.0.1"
     style-loader "0.17.0"
     sw-precache-webpack-plugin "0.9.1"
     url-loader "0.5.8"
@@ -6310,7 +6308,7 @@ setprototypeof@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
 
-settle-promise@1.0.0, settle-promise@^1.0.0:
+settle-promise@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/settle-promise/-/settle-promise-1.0.0.tgz#697adb58b821f387ce2757c06efc9de5f0ee33d8"
 
@@ -6425,7 +6423,7 @@ source-map-url@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
 
-source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
+source-map@0.5.6, source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
@@ -6499,40 +6497,6 @@ sshpk@^1.7.0:
     jodid25519 "^1.0.0"
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
-
-stack-frame-mapper@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stack-frame-mapper/-/stack-frame-mapper-0.4.0.tgz#ee885b32c84166f5913aecfa34fd77fe7c7c5e01"
-  dependencies:
-    babel-runtime "^6.23.0"
-    settle-promise "^1.0.0"
-    stack-frame "0.4.0"
-    stack-frame-utils "0.4.0"
-
-stack-frame-parser@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stack-frame-parser/-/stack-frame-parser-0.4.0.tgz#9b7f856fa6a9ef86e5d8cd3b11e33a48f52c1bb6"
-  dependencies:
-    stack-frame "0.4.0"
-
-stack-frame-unmapper@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stack-frame-unmapper/-/stack-frame-unmapper-0.4.0.tgz#90fed8ae4e853307e84f7d1a0638a9b4265b6098"
-  dependencies:
-    babel-runtime "^6.23.0"
-    stack-frame "0.4.0"
-    stack-frame-utils "0.4.0"
-
-stack-frame-utils@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stack-frame-utils/-/stack-frame-utils-0.4.0.tgz#3ecd38765690c1e2ee7127057cc11ac3b7038d36"
-  dependencies:
-    babel-runtime "^6.23.0"
-    source-map "^0.5.6"
-
-stack-frame@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stack-frame/-/stack-frame-0.4.0.tgz#147100cbb78bd69a0a0a318ea2c0af8406ffbb95"
 
 stack-utils@^1.0.0:
   version "1.0.1"
