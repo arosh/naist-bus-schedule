@@ -1,6 +1,13 @@
 {
   "short_name": "NAIST Bus Schedule",
   "name": "NAIST Bus Schedule",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

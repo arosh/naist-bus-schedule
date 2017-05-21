@@ -3,6 +3,7 @@
 import React from 'react';
 import Form from './Form';
 import List from './List';
+import Footer from './Footer';
 import BusScheduleService from '../services/BusScheduleService';
 import HolidayService from '../services/HolidayService';
 
@@ -61,6 +62,7 @@ export default class App extends React.Component {
         onChange={this.onChange}
       />
       <List schedule={this.state.schedule} />
+      <Footer />
     </div>
   );
 }
