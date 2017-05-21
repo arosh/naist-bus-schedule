@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 import BusScheduleService from './services/BusScheduleService';
+import './assets/css/bootstrap.min.css';
+import './assets/css/font-awesome.min.css';
 
 const busSchedule = new BusScheduleService();
 
