@@ -12,7 +12,7 @@ export default (props: {
     <div className="form-group">
       <label className="col-sm-2 control-label">
         {/* glyphicon-transferと迷う… */}
-        <span className="glyphicon glyphicon-sort" /> Direction
+        <i className="fa fa-exchange" aria-hidden="true" /> Direction
       </label>
       <div className="col-sm-10">
         <select
@@ -47,7 +47,7 @@ export default (props: {
     </div>
     <div className="form-group">
       <label className="col-sm-2 control-label">
-        <span className="glyphicon glyphicon-calendar" /> Timetable
+        <i className="fa fa-calendar" aria-hidden="true" /> Timetable
       </label>
       <div className="col-sm-10">
         <select
