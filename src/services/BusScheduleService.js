@@ -1,5 +1,4 @@
 // @flow
-
 export default class BusScheduleService {
   /*::
   store: ?{ [string]: string[] }

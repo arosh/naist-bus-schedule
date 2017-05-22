@@ -1,3 +1,6 @@
+// @flow
+
+// 他には https://github.com/hitsujiwool/node-holiday-jp などが有望？
 import * as holiday_jp from 'holiday_jp';
 
 export default class HolidayService {
