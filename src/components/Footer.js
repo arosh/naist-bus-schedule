@@ -1,13 +1,8 @@
 import React from 'react';
-
-const styles = {
-  paddingTop: '20px',
-  paddingBottom: '40px',
-  textAlign: 'center',
-};
+import './Footer.css';
 
 export default () => (
-  <div style={styles}>
+  <div className="site-footer">
     Icons made by
     {' '}
     <a href="http://www.freepik.com" title="Freepik">Freepik</a>
