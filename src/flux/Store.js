@@ -4,11 +4,15 @@ import Dispatcher from './Dispatcher';
 
 type TState = {
   schedule: string[],
+  scheduleMap: { [hour: string]: string[] },
 };
 
 type TPayload = {
   type: string,
-  value: string[],
+  value: {
+    schedule: string[],
+    scheduleMap: { [hour: string]: string[] },
+  },
 };
 
 class Store extends ReduceStore<TPayload, TState> {
@@ -19,6 +23,7 @@ class Store extends ReduceStore<TPayload, TState> {
   getInitialState() {
     return {
       schedule: [],
+      scheduleMap: {},
     };
   }
 
@@ -26,7 +31,8 @@ class Store extends ReduceStore<TPayload, TState> {
     switch (action.type) {
       case 'UPDATE_SCHEDULE':
         return Object.assign({}, state, {
-          schedule: action.value,
+          schedule: action.value.schedule,
+          scheduleMap: action.value.scheduleMap,
         });
       default:
         return state;

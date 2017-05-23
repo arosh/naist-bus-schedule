@@ -2,7 +2,6 @@
 import React from 'react';
 import { Container } from 'flux/utils';
 import Store from '../flux/Store';
-import SplitScheduleService from '../services/SplitScheduleService';
 
 const styles = {
   panelPrimary: {
@@ -16,7 +15,7 @@ const styles = {
 
 class List extends React.Component {
   state: {
-    schedule: string[],
+    scheduleMap: { [hour: string]: string[] },
   };
 
   static getStores() {
@@ -25,13 +24,12 @@ class List extends React.Component {
 
   static calculateState() {
     return {
-      schedule: Store.getState().schedule,
+      scheduleMap: Store.getState().scheduleMap,
     };
   }
 
   render() {
-    const map = SplitScheduleService.split(this.state.schedule);
-    const keys = Object.keys(map);
+    const keys = Object.keys(this.state.scheduleMap);
     keys.sort();
     return (
       <div>
@@ -46,7 +44,7 @@ class List extends React.Component {
               {key}
             </div>
             <ul className="list-group">
-              {map[key].map(item => (
+              {this.state.scheduleMap[key].map(item => (
                 <li key={item} className="list-group-item">{item}</li>
               ))}
             </ul>
