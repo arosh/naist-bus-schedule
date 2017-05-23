@@ -1,27 +1,21 @@
 // @flow
-
 import React from 'react';
 import Form from './Form';
 import List from './List';
 import Footer from './Footer';
-import BusScheduleService from '../services/BusScheduleService';
 import HolidayService from '../services/HolidayService';
+import * as UseCase from '../flux/UseCase';
 
 export default class App extends React.Component {
-  props: {
-    busScheduleService: BusScheduleService,
-  };
   state: {
     direction: string,
     busStop: string,
     timetable: string,
-    schedule: string[],
   };
   constructor(props?: any) {
     super(props);
-    const holidayService = new HolidayService();
-    const timetable = holidayService.isTodayHoliday() ||
-      holidayService.isTodayWeekend()
+    const timetable = HolidayService.isTodayHoliday() ||
+      HolidayService.isTodayWeekend()
       ? 'weekend'
       : 'weekday';
     this.state = {
@@ -29,18 +23,14 @@ export default class App extends React.Component {
       direction: 'to',
       busStop: 'kitaikoma',
       timetable,
-      schedule: [],
     };
     this.updateSchedule();
   }
-  updateSchedule = async () => {
+  updateSchedule = () => {
     // フォームのfrom, toとresourcesのfrom, toを間違えやすいので注意
     const direction = this.state.direction === 'from' ? 'to' : 'from';
     const query = `${direction}-${this.state.busStop}-${this.state.timetable}`;
-    const schedule = await this.props.busScheduleService.fetch(query);
-    this.setState({
-      schedule,
-    });
+    UseCase.updateSchedule(query);
   };
   onChange = (name: string, value: string) => {
     this.setState(
@@ -61,7 +51,7 @@ export default class App extends React.Component {
         timetable={this.state.timetable}
         onChange={this.onChange}
       />
-      <List schedule={this.state.schedule} />
+      <List />
       <Footer />
     </div>
   );

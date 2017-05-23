@@ -1,6 +1,5 @@
 // @flow
-
-export default class BusScheduleService {
+export class BusScheduleService {
   /*::
   store: ?{ [string]: string[] }
   */
@@ -15,3 +14,5 @@ export default class BusScheduleService {
     return this.store[key];
   }
 }
+
+export default new BusScheduleService();

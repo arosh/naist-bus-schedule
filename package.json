@@ -8,12 +8,13 @@
     "gh-pages": "^1.0.0",
     "mz": "^2.6.0",
     "prettier": "^1.3.1",
-    "react-scripts": "1.0.2",
+    "react-scripts": "1.0.5",
     "selenium-standalone": "^6.4.1",
     "string.prototype.padstart": "^3.0.0",
     "webdriverio": "^4.8.0"
   },
   "dependencies": {
+    "flux": "^3.1.2",
     "font-awesome": "^4.7.0",
     "holiday_jp": "holiday-jp/holiday_jp-js",
     "react": "^15.5.4",
@@ -25,7 +26,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,src/components,src/services,scripts,e2e}/*.js\"",
+    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,src/components,src/services,src/flux,scripts,e2e}/*.js\"",
     "install:selenium": "selenium-standalone install",
     "start:selenium": "selenium-standalone start",
     "e2e": "ava \"e2e/**/*.js\""
