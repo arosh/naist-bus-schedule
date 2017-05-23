@@ -11,7 +11,7 @@ type TPayload = {
   value: string[],
 };
 
-class Store extends ReduceStore {
+class Store extends ReduceStore<TPayload, TState> {
   constructor() {
     super(Dispatcher);
   }
@@ -22,7 +22,7 @@ class Store extends ReduceStore {
     };
   }
 
-  reduce(state: TState, action: TPayload): TState {
+  reduce(state: TState, action: TPayload) {
     switch (action.type) {
       case 'UPDATE_SCHEDULE':
         return Object.assign({}, state, {
