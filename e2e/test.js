@@ -33,13 +33,9 @@ class PageObject {
     await this.setTimetable(timetable);
   }
 
-  async waitForListExists() {
-    return this.browser.waitForExist('#react-root > div > div > ul');
-  }
-
   async search(target) {
     return this.browser
-      .element('#react-root > div > div > ul')
+      .element('//*[@id="react-root"]/div/div[1]/div/ul')
       .isExisting(`li=${target}`);
   }
 }
