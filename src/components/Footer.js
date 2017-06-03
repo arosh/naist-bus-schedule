@@ -2,7 +2,7 @@
 import React from 'react';
 import './Footer.css';
 
-export default () => (
+export default () =>
   <div className="site-footer">
     Icons made by
     {' '}
@@ -22,5 +22,4 @@ export default () => (
     >
       CC 3.0 BY
     </a>
-  </div>
-);
+  </div>;

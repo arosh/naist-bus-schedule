@@ -42,7 +42,7 @@ export default class App extends React.Component {
       }
     );
   };
-  render = () => (
+  render = () =>
     <div className="container">
       <h1>NAIST Bus Schedule</h1>
       <Form
@@ -53,6 +53,5 @@ export default class App extends React.Component {
       />
       <List />
       <Footer />
-    </div>
-  );
+    </div>;
 }
