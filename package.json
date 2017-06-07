@@ -7,7 +7,7 @@
     "flow-bin": "^0.47.0",
     "gh-pages": "^1.0.0",
     "mz": "^2.6.0",
-    "prettier": "^1.4.1",
+    "prettier": "^1.4.2",
     "react-scripts": "1.0.7",
     "selenium-standalone": "^6.4.1",
     "string.prototype.padstart": "^3.0.0",
