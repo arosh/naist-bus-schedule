@@ -52,7 +52,7 @@ test.after.always(async t => {
   await browser.end();
 });
 
-test.serial(async t => {
+test(async t => {
   t.is(await browser.getTitle(), 'NAIST Bus Schedule');
 });
 
@@ -72,7 +72,7 @@ const data = [
 ];
 
 for (const datum of data) {
-  test.serial(async t => {
+  test(async t => {
     const page = new PageObject(browser);
     await page.setForms(datum[0], datum[1], datum[2]);
     t.true(await page.search(datum[3]));
