@@ -34,7 +34,7 @@ class List extends React.Component {
     return (
       <div>
         <h2><i className="fa fa-clock-o" aria-hidden="true" /> Schedule</h2>
-        {keys.map(key => (
+        {keys.map(key =>
           <div
             key={key}
             className="panel panel-primary"
@@ -44,12 +44,12 @@ class List extends React.Component {
               {key}
             </div>
             <ul className="list-group">
-              {this.state.scheduleMap[key].map(item => (
+              {this.state.scheduleMap[key].map(item =>
                 <li key={item} className="list-group-item">{item}</li>
-              ))}
+              )}
             </ul>
           </div>
-        ))}
+        )}
       </div>
     );
   }

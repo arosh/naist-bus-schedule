@@ -6,7 +6,7 @@ export default (props: {
   busStop: string,
   timetable: string,
   onChange: (string, string) => void,
-}) => (
+}) =>
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 control-label">
@@ -61,5 +61,4 @@ export default (props: {
         </select>
       </div>
     </div>
-  </form>
-);
+  </form>;
