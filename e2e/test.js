@@ -53,7 +53,7 @@ test.after.always(async t => {
 });
 
 test(async t => {
-  t.is(await browser.getTitle(), 'NAIST Bus Schedule');
+  t.is(await browser.getTitle(), 'NAIST Bus Schedule / NAIST バス時刻表');
 });
 
 const data = [
