@@ -6,6 +6,8 @@ import Footer from './Footer';
 import HolidayService from '../services/HolidayService';
 import * as UseCase from '../flux/UseCase';
 
+const Text = ({children}) => <span style={{display: 'inline-block'}}>{children}</span>;
+
 export default class App extends React.Component {
   state: {
     direction: string,
@@ -44,14 +46,20 @@ export default class App extends React.Component {
   };
   render = () =>
     <div className="container">
-      <h1>NAIST Bus Schedule</h1>
-      <Form
-        direction={this.state.direction}
-        busStop={this.state.busStop}
-        timetable={this.state.timetable}
-        onChange={this.onChange}
-      />
-      <List />
-      <Footer />
+      <div className="row">
+        <div className="col-xs-12 col-md-offset-2 col-md-8">
+          <h1>
+            <Text>{document.title.substr(0, 18)}</Text> / <Text>{document.title.substr(21)}</Text>
+          </h1>
+          <Form
+            direction={this.state.direction}
+            busStop={this.state.busStop}
+            timetable={this.state.timetable}
+            onChange={this.onChange}
+          />
+          <List />
+          <Footer />
+        </div>
+      </div>
     </div>;
 }
