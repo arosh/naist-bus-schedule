@@ -6,7 +6,7 @@ import Footer from './Footer';
 import HolidayService from '../services/HolidayService';
 import * as UseCase from '../flux/UseCase';
 
-const Text = ({children}) => <span style={{display: 'inline-block'}}>{children}</span>;
+// const Text = ({children}) => <span style={{display: 'inline-block'}}>{children}</span>;
 
 export default class App extends React.Component {
   state: {
@@ -16,10 +16,10 @@ export default class App extends React.Component {
   };
   constructor(props?: any) {
     super(props);
-    const timetable = HolidayService.isTodayHoliday() ||
-      HolidayService.isTodayWeekend()
-      ? 'weekend'
-      : 'weekday';
+    const timetable =
+      HolidayService.isTodayHoliday() || HolidayService.isTodayWeekend()
+        ? 'weekend'
+        : 'weekday';
     this.state = {
       // 初めてアプリを触る人はNAIST行きの時刻を知りたいはず
       direction: 'to',
@@ -49,8 +49,9 @@ export default class App extends React.Component {
       <div className="row">
         <div className="col-xs-12 col-md-offset-2 col-md-8">
           <h1>
-            <Text>{document.title.substr(0, 18)}</Text> / <Text>{document.title.substr(21)}</Text>
+            {document.title}
           </h1>
+
           <Form
             direction={this.state.direction}
             busStop={this.state.busStop}

@@ -38,9 +38,9 @@ export default (props: {
             props.onChange('busStop', e.target.value);
           }}
         >
-          <option value="kitaikoma">Gakken Kita Ikoma Station / 学研北生駒駅</option>
-          <option value="gakuemmae">Gakuemmae Station / 学園前駅</option>
-          <option value="takanohara">Takanohara Station / 高の原駅</option>
+          <option value="kitaikoma">学研北生駒駅 / Gakken Kita Ikoma Station</option>
+          <option value="gakuemmae">学園前駅 / Gakuemmae Station</option>
+          <option value="takanohara">高の原駅 / Takanohara Station</option>
         </select>
       </div>
     </div>

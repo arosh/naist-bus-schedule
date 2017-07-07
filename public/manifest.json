@@ -1,6 +1,6 @@
 {
-  "short_name": "NAIST Bus Schedule",
-  "name": "NAIST Bus Schedule",
+  "short_name": "NAIST バス時刻表",
+  "name": "NAIST バス時刻表",
   "icons": [
     {
       "src": "favicon.ico",
