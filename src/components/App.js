@@ -3,6 +3,7 @@ import React from 'react';
 import Form from './Form';
 import List from './List';
 import Footer from './Footer';
+import Share from './Share';
 import HolidayService from '../services/HolidayService';
 import * as UseCase from '../flux/UseCase';
 
@@ -51,7 +52,7 @@ export default class App extends React.Component {
           <h1>
             {document.title}
           </h1>
-
+          <Share />
           <Form
             direction={this.state.direction}
             busStop={this.state.busStop}
