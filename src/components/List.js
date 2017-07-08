@@ -4,10 +4,11 @@ import { Container } from 'flux/utils';
 import Store from '../flux/Store';
 
 const styles = {
-  panelPrimary: {
+  panel: {
     borderColor: '#424242',
   },
   panelHeading: {
+    color: '#fff',
     backgroundColor: '#212121',
     borderColor: '#424242',
   },
@@ -39,8 +40,8 @@ class List extends React.Component {
         {keys.map(key =>
           <div
             key={key}
-            className="panel panel-primary"
-            style={styles.panelPrimary}
+            className="panel"
+            style={styles.panel}
           >
             <div className="panel-heading" style={styles.panelHeading}>
               {key}
