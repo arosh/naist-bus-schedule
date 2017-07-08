@@ -13,11 +13,11 @@ export default class App extends React.Component {
   state: {
     direction: string,
     busStop: string,
-    timetable: string,
+    timeTable: string,
   };
   constructor(props?: any) {
     super(props);
-    const timetable =
+    const timeTable =
       HolidayService.isTodayHoliday() || HolidayService.isTodayWeekend()
         ? 'weekend'
         : 'weekday';
@@ -25,14 +25,14 @@ export default class App extends React.Component {
       // 初めてアプリを触る人はNAIST行きの時刻を知りたいはず
       direction: 'to',
       busStop: 'kitaikoma',
-      timetable,
+      timeTable,
     };
     this.updateSchedule();
   }
   updateSchedule = () => {
     // フォームのfrom, toとresourcesのfrom, toを間違えやすいので注意
     const direction = this.state.direction === 'from' ? 'to' : 'from';
-    const query = `${direction}-${this.state.busStop}-${this.state.timetable}`;
+    const query = `${direction}-${this.state.busStop}-${this.state.timeTable}`;
     UseCase.updateSchedule(query);
   };
   onChange = (name: string, value: string) => {
@@ -56,7 +56,7 @@ export default class App extends React.Component {
           <Form
             direction={this.state.direction}
             busStop={this.state.busStop}
-            timetable={this.state.timetable}
+            timeTable={this.state.timeTable}
             onChange={this.onChange}
           />
           <List />

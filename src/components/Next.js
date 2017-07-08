@@ -5,8 +5,8 @@ const styles = {
     borderColor: '#424242',
   },
   center: {
-    fontSize: "48px",
-  }
+    fontSize: '48px',
+  },
 };
 
 export default () =>

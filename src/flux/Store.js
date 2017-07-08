@@ -1,6 +1,6 @@
 // @flow
-import { ReduceStore } from 'flux/utils';
-import Dispatcher from './Dispatcher';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 type TState = {
   schedule: string[],
@@ -9,35 +9,25 @@ type TState = {
 
 type TPayload = {
   type: string,
-  value: {
-    schedule: string[],
-    scheduleMap: { [hour: string]: string[] },
-  },
+  schedule?: string[],
+  scheduleMap?: { [hour: string]: string[] },
 };
 
-class Store extends ReduceStore<TPayload, TState> {
-  constructor() {
-    super(Dispatcher);
-  }
+const initialState: TState = {
+  schedule: [],
+  scheduleMap: {},
+};
 
-  getInitialState() {
-    return {
-      schedule: [],
-      scheduleMap: {},
-    };
-  }
-
-  reduce(state: TState, action: TPayload) {
-    switch (action.type) {
-      case 'UPDATE_SCHEDULE':
-        return Object.assign({}, state, {
-          schedule: action.value.schedule,
-          scheduleMap: action.value.scheduleMap,
-        });
-      default:
-        return state;
-    }
+function reducer(state: TState = initialState, action: TPayload) {
+  switch (action.type) {
+    case 'UPDATE_SCHEDULE':
+      return Object.assign({}, state, {
+        schedule: action.schedule,
+        scheduleMap: action.scheduleMap,
+      });
+    default:
+      return state;
   }
 }
 
-export default new Store();
+export default createStore(reducer, composeWithDevTools());

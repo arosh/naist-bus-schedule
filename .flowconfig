@@ -1,9 +1,9 @@
 [ignore]
-.*/node_modules/flux/.*
 
 [include]
 
 [libs]
-flow
 
 [options]
+
+[lints]

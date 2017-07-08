@@ -8,21 +8,18 @@ class PageObject {
 
   async setDirection(direction) {
     return this.browser.selectByVisibleText(
-      '#react-root > div > form > div:nth-child(1) > div > select',
+      'select[name="direction"]',
       direction
     );
   }
 
   async setBusStop(busStop) {
-    return this.browser.selectByVisibleText(
-      '#react-root > div > form > div:nth-child(2) > div > select',
-      busStop
-    );
+    return this.browser.selectByVisibleText('select[name="busStop"]', busStop);
   }
 
   async setTimetable(timetable) {
     return this.browser.selectByVisibleText(
-      '#react-root > div > form > div:nth-child(3) > div > select',
+      'select[name="timeTable"]',
       timetable
     );
   }
@@ -35,7 +32,7 @@ class PageObject {
 
   async search(target) {
     return this.browser
-      .element('//*[@id="react-root"]/div/div[1]/div/ul')
+      .element('.schedule-list > div > ul')
       .isExisting(`li=${target}`);
   }
 }
@@ -53,22 +50,46 @@ test.after.always(async t => {
 });
 
 test(async t => {
-  t.is(await browser.getTitle(), 'NAIST Bus Schedule / NAIST バス時刻表');
+  t.is(await browser.getTitle(), 'NAIST バス時刻表');
 });
 
 const data = [
-  ['To NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:38', '06:31'],
-  ['To NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:31', '06:58'],
-  ['To NAIST', 'Gakuemmae', 'for weekday', '07:06', '06:38'],
-  ['To NAIST', 'Gakuemmae', 'for weekend', '06:58', '06:31'],
-  ['To NAIST', 'Takanohara', 'for weekday', '05:45', '07:06'],
-  ['To NAIST', 'Takanohara', 'for weekend', '07:54', '08:45'],
-  ['From NAIST', 'Gakken Kita Ikoma', 'for weekday', '06:52', '06:49'],
-  ['From NAIST', 'Gakken Kita Ikoma', 'for weekend', '06:49', '06:52'],
-  ['From NAIST', 'Gakuemmae', 'for weekday', '06:16', '07:18'],
-  ['From NAIST', 'Gakuemmae', 'for weekend', '06:49', '06:16'],
-  ['From NAIST', 'Takanohara', 'for weekday', '06:17', '06:31'],
-  ['From NAIST', 'Takanohara', 'for weekend', '08:29', '06:31'],
+  [
+    'To NAIST',
+    '学研北生駒駅 / Gakken Kita Ikoma Station',
+    'for weekday',
+    '06:38',
+    '06:31',
+  ],
+  [
+    'To NAIST',
+    '学研北生駒駅 / Gakken Kita Ikoma Station',
+    'for weekend',
+    '06:31',
+    '06:58',
+  ],
+  ['To NAIST', '学園前駅 / Gakuemmae Station', 'for weekday', '07:06', '06:38'],
+  ['To NAIST', '学園前駅 / Gakuemmae Station', 'for weekend', '06:58', '06:31'],
+  ['To NAIST', '高の原駅 / Takanohara Station', 'for weekday', '05:45', '07:06'],
+  ['To NAIST', '高の原駅 / Takanohara Station', 'for weekend', '07:54', '08:45'],
+  [
+    'From NAIST',
+    '学研北生駒駅 / Gakken Kita Ikoma Station',
+    'for weekday',
+    '06:52',
+    '06:49',
+  ],
+  [
+    'From NAIST',
+    '学研北生駒駅 / Gakken Kita Ikoma Station',
+    'for weekend',
+    '06:49',
+    '06:52',
+  ],
+  ['From NAIST', '学園前駅 / Gakuemmae Station', 'for weekday', '06:16', '07:18'],
+  ['From NAIST', '学園前駅 / Gakuemmae Station', 'for weekend', '06:49', '06:16'],
+  ['From NAIST', '高の原駅 / Takanohara Station', 'for weekday', '06:17', '06:31'],
+  ['From NAIST', '高の原駅 / Takanohara Station', 'for weekend', '08:29', '06:31'],
 ];
 
 for (const datum of data) {

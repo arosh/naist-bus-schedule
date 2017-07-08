@@ -4,7 +4,7 @@ import React from 'react';
 export default (props: {
   direction: string,
   busStop: string,
-  timetable: string,
+  timeTable: string,
   onChange: (string, string) => void,
 }) =>
   <form className="form-horizontal">
@@ -15,6 +15,7 @@ export default (props: {
       </label>
       <div className="col-sm-10">
         <select
+          name="direction"
           className="form-control"
           value={props.direction}
           onChange={e => {
@@ -32,6 +33,7 @@ export default (props: {
       </label>
       <div className="col-sm-10">
         <select
+          name="busStop"
           className="form-control"
           value={props.busStop}
           onChange={e => {
@@ -50,10 +52,11 @@ export default (props: {
       </label>
       <div className="col-sm-10">
         <select
-          value={props.timetable}
+          name="timeTable"
+          value={props.timeTable}
           className="form-control"
           onChange={e => {
-            props.onChange('timetable', e.target.value);
+            props.onChange('timeTable', e.target.value);
           }}
         >
           <option value="weekday">for weekday</option>
