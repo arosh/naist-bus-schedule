@@ -1,12 +1,8 @@
-// @flow
 import React from 'react';
+import { connect } from 'react-redux';
+import * as UseCase from '../flux/UseCase';
 
-export default (props: {
-  direction: string,
-  busStop: string,
-  timeTable: string,
-  onChange: (string, string) => void,
-}) =>
+const Form = ({ direction, busStop, timeTable, onChange }) =>
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 control-label">
@@ -17,9 +13,9 @@ export default (props: {
         <select
           name="direction"
           className="form-control"
-          value={props.direction}
+          value={direction}
           onChange={e => {
-            props.onChange('direction', e.target.value);
+            onChange('direction', e.target.value);
           }}
         >
           <option value="to">To NAIST</option>
@@ -35,9 +31,9 @@ export default (props: {
         <select
           name="busStop"
           className="form-control"
-          value={props.busStop}
+          value={busStop}
           onChange={e => {
-            props.onChange('busStop', e.target.value);
+            onChange('busStop', e.target.value);
           }}
         >
           <option value="kitaikoma">学研北生駒駅 / Gakken Kita Ikoma Station</option>
@@ -53,10 +49,10 @@ export default (props: {
       <div className="col-sm-10">
         <select
           name="timeTable"
-          value={props.timeTable}
+          value={timeTable}
           className="form-control"
           onChange={e => {
-            props.onChange('timeTable', e.target.value);
+            onChange('timeTable', e.target.value);
           }}
         >
           <option value="weekday">for weekday</option>
@@ -65,3 +61,16 @@ export default (props: {
       </div>
     </div>
   </form>;
+
+export default connect(
+  state => ({
+    direction: state.form.direction,
+    busStop: state.form.busStop,
+    timeTable: state.form.timeTable,
+  }),
+  () => ({
+    onChange: (name, value) => {
+      UseCase.changeForm(name, value);
+    },
+  })
+)(Form);
