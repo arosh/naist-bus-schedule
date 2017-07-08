@@ -14,16 +14,17 @@ const styles = {
 
 const Next = ({ exist, hour, minute, second }) =>
   <div>
-    <h2>Next</h2>
-    <div className="panel" style={styles.panel}>
-      <div className="panel-body">
-        <div className="text-center" style={styles.center}>
-          {exist
-            ? `${padStart(hour, 2, '0')}：${padStart(minute, 2, '0')}：${padStart(second, 2, '0')}`
-            : '--：--：--'}
+    {exist &&
+      <div>
+        <h2>Next</h2>
+        <div className="panel" style={styles.panel}>
+          <div className="panel-body">
+            <div className="text-center" style={styles.center}>
+              {padStart(hour, 2, '0')}：{padStart(minute, 2, '0')}：{padStart(second, 2, '0')}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </div>}
   </div>;
 
 export default connect(state => {
