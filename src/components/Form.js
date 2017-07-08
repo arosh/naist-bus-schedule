@@ -5,11 +5,11 @@ import * as UseCase from '../flux/UseCase';
 const Form = ({ direction, busStop, timeTable, onChange }) =>
   <form className="form-horizontal">
     <div className="form-group">
-      <label className="col-sm-2 control-label">
+      <label className="col-sm-2 col-md-3 control-label">
         {/* glyphicon-transferと迷う… */}
         <i className="fa fa-exchange" aria-hidden="true" /> Direction
       </label>
-      <div className="col-sm-10">
+      <div className="col-sm-10 col-md-9">
         <select
           name="direction"
           className="form-control"
@@ -24,10 +24,10 @@ const Form = ({ direction, busStop, timeTable, onChange }) =>
       </div>
     </div>
     <div className="form-group">
-      <label className="col-sm-2 control-label">
+      <label className="col-sm-2 col-md-3 control-label">
         <i className="fa fa-bus" aria-hidden="true" /> Bus Stop
       </label>
-      <div className="col-sm-10">
+      <div className="col-sm-10 col-md-9">
         <select
           name="busStop"
           className="form-control"
@@ -43,10 +43,10 @@ const Form = ({ direction, busStop, timeTable, onChange }) =>
       </div>
     </div>
     <div className="form-group">
-      <label className="col-sm-2 control-label">
+      <label className="col-sm-2 col-md-3 control-label">
         <i className="fa fa-calendar" aria-hidden="true" /> Timetable
       </label>
-      <div className="col-sm-10">
+      <div className="col-sm-10 col-md-9">
         <select
           name="timeTable"
           value={timeTable}

@@ -10,7 +10,7 @@ const styles = {
 
 export default () =>
   <div style={styles.siteFooter}>
-    <p>Last modified: 2017/07/07</p>
+    <p>Last modified: 2017/07/08</p>
     <p>
       Icons made by{' '}
       <a href="http://www.freepik.com" title="Freepik">

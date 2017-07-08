@@ -3,7 +3,7 @@ import store from './Store';
 import BusScheduleService from '../services/BusScheduleService';
 import SplitScheduleService from '../services/SplitScheduleService';
 
-export async function updateSchedule(
+export async function changeSchedule(
   direction: string,
   busStop: string,
   timeTable: string
@@ -31,5 +31,15 @@ export function changeForm(name: string, value: string) {
   const form = Object.assign({}, store.getState().form, {
     [name]: value,
   });
-  updateSchedule(form.direction, form.busStop, form.timeTable);
+  changeSchedule(form.direction, form.busStop, form.timeTable);
+}
+
+export function changeCurrentTime() {
+  const date = new Date();
+  store.dispatch({
+    type: 'UPDATE_CURRENT_TIME',
+    hour: date.getHours(),
+    minute: date.getMinutes(),
+    second: date.getSeconds(),
+  });
 }
