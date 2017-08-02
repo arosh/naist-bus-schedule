@@ -1,6 +1,6 @@
 // @flow
 import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import HolidayService from '../services/HolidayService';
 import * as UseCase from './UseCase';
 

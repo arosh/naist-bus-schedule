@@ -4,12 +4,12 @@
   "private": true,
   "devDependencies": {
     "ava": "^0.21.0",
-    "flow-bin": "^0.50.0",
+    "flow-bin": "^0.51.1",
     "gh-pages": "^1.0.0",
     "mz": "^2.6.0",
     "prettier": "^1.5.3",
     "react-scripts": "1.0.10",
-    "selenium-standalone": "^6.5.0",
+    "selenium-standalone": "^6.6.0",
     "string.prototype.padstart": "^3.0.0",
     "webdriverio": "^4.8.0"
   },
