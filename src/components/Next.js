@@ -16,7 +16,7 @@ const Next = ({ exist, hour, minute, second }) =>
   <div>
     {exist &&
       <div>
-        <h2>Next</h2>
+        <h2>次発バスまでの時間</h2>
         <div className="panel" style={styles.panel}>
           <div className="panel-body">
             <div className="text-center" style={styles.center}>

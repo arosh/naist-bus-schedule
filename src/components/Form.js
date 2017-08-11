@@ -18,8 +18,8 @@ const Form = ({ direction, busStop, timeTable, onChange }) =>
             onChange('direction', e.target.value);
           }}
         >
-          <option value="to">To NAIST</option>
-          <option value="from">From NAIST</option>
+          <option value="to">NAIST行き / To NAIST</option>
+          <option value="from">NAIST発 / From NAIST</option>
         </select>
       </div>
     </div>
@@ -55,8 +55,8 @@ const Form = ({ direction, busStop, timeTable, onChange }) =>
             onChange('timeTable', e.target.value);
           }}
         >
-          <option value="weekday">for weekday</option>
-          <option value="weekend">for weekend</option>
+          <option value="weekday">平日ダイヤ / for weekday</option>
+          <option value="weekend">休日ダイヤ / for weekend</option>
         </select>
       </div>
     </div>

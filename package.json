@@ -4,11 +4,11 @@
   "private": true,
   "devDependencies": {
     "ava": "^0.21.0",
-    "flow-bin": "^0.51.1",
+    "flow-bin": "^0.52.0",
     "gh-pages": "^1.0.0",
     "mz": "^2.6.0",
     "prettier": "^1.5.3",
-    "react-scripts": "1.0.10",
+    "react-scripts": "1.0.11",
     "selenium-standalone": "^6.6.0",
     "string.prototype.padstart": "^3.0.0",
     "webdriverio": "^4.8.0"
@@ -18,7 +18,7 @@
     "holiday_jp": "holiday-jp/holiday_jp-js",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
+    "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2"
   },
