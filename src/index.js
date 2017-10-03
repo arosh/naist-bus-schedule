@@ -24,4 +24,4 @@ ReactDOM.render(
   document.getElementById('react-root')
 );
 
-registerServiceWorker.unregister();
+registerServiceWorker.register();

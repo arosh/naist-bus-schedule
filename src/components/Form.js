@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as UseCase from '../flux/UseCase';
 
-const Form = ({ direction, busStop, timeTable, onChange }) =>
+const Form = ({ direction, busStop, timeTable, onChange }) => (
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
-        {/* glyphicon-transferと迷う… */}
         <i className="fa fa-exchange" aria-hidden="true" /> Direction
       </label>
       <div className="col-sm-10 col-md-9">
@@ -55,12 +54,13 @@ const Form = ({ direction, busStop, timeTable, onChange }) =>
             onChange('timeTable', e.target.value);
           }}
         >
-          <option value="weekday">平日ダイヤ / for weekday</option>
-          <option value="weekend">休日ダイヤ / for weekend</option>
+          <option value="weekday">平日ダイヤ / weekday</option>
+          <option value="weekend">休日ダイヤ / weekend</option>
         </select>
       </div>
     </div>
-  </form>;
+  </form>
+);
 
 export default connect(
   state => ({

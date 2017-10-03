@@ -3,14 +3,14 @@ import React from 'react';
 
 const styles = {
   siteFooter: {
-    margin: '40px 0',
+    margin: '28px 0 40px',
     textAlign: 'center',
   },
 };
 
-export default () =>
+export default () => (
   <div style={styles.siteFooter}>
-    <p>Last modified: 2017/07/08</p>
+    <p>Last modified: 2017/10/03</p>
     <p>
       Icons made by{' '}
       <a href="http://www.freepik.com" title="Freepik">
@@ -30,4 +30,5 @@ export default () =>
         CC 3.0 BY
       </a>
     </p>
-  </div>;
+  </div>
+);

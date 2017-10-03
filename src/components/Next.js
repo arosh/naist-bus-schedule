@@ -12,9 +12,9 @@ const styles = {
   },
 };
 
-const Next = ({ exist, hour, minute, second }) =>
+const Next = ({ exist, hour, minute, second }) => (
   <div>
-    {exist &&
+    {exist && (
       <div>
         <h2>次発バスまでの時間</h2>
         <div className="panel" style={styles.panel}>
@@ -24,8 +24,10 @@ const Next = ({ exist, hour, minute, second }) =>
             </div>
           </div>
         </div>
-      </div>}
-  </div>;
+      </div>
+    )}
+  </div>
+);
 
 export default connect(state => {
   const diff = TimeDiffService.getNext(

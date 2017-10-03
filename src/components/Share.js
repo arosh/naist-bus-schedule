@@ -11,15 +11,15 @@ const btnFacebookStyle = {
   color: '#fff',
   backgroundColor: '#2d4373',
   borderColor: '#273b65',
-}
+};
 
-const url = () => encodeURIComponent('https://arosh.github.io/naist-bus-schedule/');
+const url = () =>
+  encodeURIComponent('https://arosh.github.io/naist-bus-schedule/');
 const tweetUrl = () =>
   `http://twitter.com/intent/tweet?url=${url()}&text=${document.title}`;
-const facebookUrl = () =>
-  `http://www.facebook.com/sharer.php?u=${url()}`;
+const facebookUrl = () => `http://www.facebook.com/sharer.php?u=${url()}`;
 
-export default () =>
+export default () => (
   <div className="clearfix">
     <div className="pull-right">
       <div className="form-group">
@@ -43,4 +43,5 @@ export default () =>
         </a>
       </div>
     </div>
-  </div>;
+  </div>
+);

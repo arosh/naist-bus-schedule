@@ -8,13 +8,11 @@ import Next from './Next';
 
 // const Text = ({children}) => <span style={{display: 'inline-block'}}>{children}</span>;
 
-export default () =>
+export default () => (
   <div className="container">
     <div className="row">
       <div className="col-md-offset-2 col-md-8">
-        <h1>
-          {document.title}
-        </h1>
+        <h1>{document.title}</h1>
         <Share />
         <Form />
         <Next />
@@ -22,4 +20,5 @@ export default () =>
         <Footer />
       </div>
     </div>
-  </div>;
+  </div>
+);
