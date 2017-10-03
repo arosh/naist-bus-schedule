@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "ava": "^0.21.0",
-    "flow-bin": "^0.52.0",
+    "ava": "^0.22.0",
+    "flow-bin": "^0.56.0",
     "gh-pages": "^1.0.0",
-    "mz": "^2.6.0",
-    "prettier": "^1.5.3",
-    "react-scripts": "1.0.11",
-    "selenium-standalone": "^6.6.0",
+    "mz": "^2.7.0",
+    "prettier": "^1.7.3",
+    "react-scripts": "1.0.14",
+    "selenium-standalone": "^6.9.0",
     "string.prototype.padstart": "^3.0.0",
     "webdriverio": "^4.8.0"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
     "holiday_jp": "holiday-jp/holiday_jp-js",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2"
@@ -28,7 +28,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,src/components,src/services,src/flux,scripts,e2e}/*.js\"",
+    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,scripts,e2e}/**/*.js\"",
     "start:selenium": "selenium-standalone install && selenium-standalone start",
     "e2e": "ava --serial \"e2e/**/*.js\""
   },
