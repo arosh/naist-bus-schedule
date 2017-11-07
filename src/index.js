@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 import store, { initialize } from './flux/Store';
 import * as UseCase from './flux/UseCase';
@@ -17,11 +17,16 @@ setInterval(() => {
   UseCase.changeCurrentTime();
 }, 1000);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('react-root')
-);
+document.addEventListener('DOMContentLoaded', () => {
+  const rootEl = document.getElementById('react-root');
+  if (rootEl) {
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      rootEl
+    );
+  }
+});
 
-registerServiceWorker.register();
+registerServiceWorker();

@@ -28,7 +28,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
-    "format": "prettier --single-quote --trailing-comma es5 --write \"{src,scripts,e2e}/**/*.js\"",
+    "format": "prettier --write \"{src,scripts,e2e}/**/*.js\"",
     "start:selenium": "selenium-standalone install && selenium-standalone start",
     "e2e": "ava --serial \"e2e/**/*.js\""
   },

@@ -6,8 +6,6 @@ import Footer from './Footer';
 import Share from './Share';
 import Next from './Next';
 
-// const Text = ({children}) => <span style={{display: 'inline-block'}}>{children}</span>;
-
 export default () => (
   <div className="container">
     <div className="row">

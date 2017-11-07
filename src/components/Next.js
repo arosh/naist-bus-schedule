@@ -12,6 +12,8 @@ const styles = {
   },
 };
 
+const pad = (value: string) => padStart(value, 2, '0');
+
 const Next = ({ exist, hour, minute, second }) => (
   <div>
     {exist && (
@@ -20,7 +22,7 @@ const Next = ({ exist, hour, minute, second }) => (
         <div className="panel" style={styles.panel}>
           <div className="panel-body">
             <div className="text-center" style={styles.center}>
-              {padStart(hour, 2, '0')}：{padStart(minute, 2, '0')}：{padStart(second, 2, '0')}
+              {`${pad(hour)}：${pad(minute)}：${pad(second)}`}
             </div>
           </div>
         </div>
