@@ -4,6 +4,13 @@
   "private": true,
   "devDependencies": {
     "ava": "^0.25.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.65.0",
     "gh-pages": "^1.1.0",
     "mz": "^2.7.0",
@@ -30,6 +37,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "flow": "flow",
+    "lint": "eslint src/components",
     "format": "prettier --write \"{src,scripts,e2e}/**/*.js\"",
     "start:selenium": "selenium-standalone install && selenium-standalone start",
     "e2e": "ava --serial \"e2e/**/*.js\""
