@@ -2,7 +2,8 @@
 export class TimeDiffService {
   getNext(hour: number, minute: number, second: number, schedule: string[]) {
     const s1 = hour * 60 * 60 + minute * 60 + second;
-    for (const item of schedule) {
+    for (let i = 0; i < schedule.length; i++) {
+      const item = schedule[i];
       const sp = item.split(':');
       const h2 = parseInt(sp[0], 10);
       const m2 = parseInt(sp[1], 10);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as padStart from 'string.prototype.padstart';
 import TimeDiffService from '../services/TimeDiffService';
 
 const styles = {
@@ -12,7 +11,7 @@ const styles = {
   },
 };
 
-const pad = (value: string) => padStart(value, 2, '0');
+const pad = (value: string) => value.toString(10).padStart(2, '0');
 
 const Next = ({ exist, hour, minute, second }) => (
   <div>
@@ -45,9 +44,8 @@ export default connect(state => {
       minute: diff.minute,
       second: diff.second,
     };
-  } else {
-    return {
-      exist: false,
-    };
   }
+  return {
+    exist: false,
+  };
 })(Next);

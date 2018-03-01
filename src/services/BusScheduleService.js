@@ -1,6 +1,6 @@
 // @flow
 export class BusScheduleService {
-  /*::
+  /* ::
   store: ?{ [string]: string[] }
   */
   constructor() {

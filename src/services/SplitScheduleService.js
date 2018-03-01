@@ -2,7 +2,8 @@
 export class SplitScheduleService {
   split(schedule: string[]): { [hour: string]: string[] } {
     const map: { [hour: string]: string[] } = {};
-    for (const item of schedule) {
+    for (let i = 0; i < schedule.length; i++) {
+      const item = schedule[i];
       const split = item.split(':');
       const hour = split[0];
       const key = `${hour}:00 − ${hour}:59`;
