@@ -6,6 +6,12 @@ import Footer from './Footer';
 import Share from './Share';
 import Next from './Next';
 
+const styles = {
+  footer: {
+    margin: '28px 0 40px',
+  },
+};
+
 export default () => (
   <div className="container">
     <div className="row">
@@ -15,7 +21,9 @@ export default () => (
         <Form />
         <Next />
         <List />
-        <Footer />
+        <div style={styles.footer}>
+          <Footer />
+        </div>
       </div>
     </div>
   </div>

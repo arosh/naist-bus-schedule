@@ -2,12 +2,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
 import * as serviceWorker from './registerServiceWorker';
 import App from './components/App';
 import store, { initialize } from './flux/Store';
 import * as UseCase from './flux/UseCase';
 import './assets/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
 
 initialize();
 

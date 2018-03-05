@@ -2,22 +2,31 @@
 import React from 'react';
 
 const styles = {
-  siteFooter: {
-    margin: '28px 0 40px',
+  footer: {
     textAlign: 'center',
   },
 };
 
 export default () => (
-  <div style={styles.siteFooter}>
-    <p>Last modified: 2017/10/03</p>
+  <div style={styles.footer}>
+    <p>Last modified: 2018/03/05</p>
     <p>
       Icons made by{' '}
-      <a href="http://www.freepik.com" title="Freepik">
+      <a
+        href="http://www.freepik.com"
+        title="Freepik"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Freepik
       </a>{' '}
       from{' '}
-      <a href="http://www.flaticon.com" title="Flaticon">
+      <a
+        href="http://www.flaticon.com"
+        title="Flaticon"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         www.flaticon.com
       </a>{' '}
       is licensed by{' '}

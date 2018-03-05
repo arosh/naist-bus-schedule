@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import TimeDiffService from '../services/TimeDiffService';
 
@@ -13,22 +13,19 @@ const styles = {
 
 const pad = (value: string) => value.toString(10).padStart(2, '0');
 
-const Next = ({ exist, hour, minute, second }) => (
-  <div>
-    {exist && (
-      <div>
-        <h2>次発バスまでの時間</h2>
-        <div className="panel" style={styles.panel}>
-          <div className="panel-body">
-            <div className="text-center" style={styles.center}>
-              {`${pad(hour)}：${pad(minute)}：${pad(second)}`}
-            </div>
+const Next = ({ exist, hour, minute, second }) =>
+  exist && (
+    <React.Fragment>
+      <h2>次発バスまでの時間</h2>
+      <div className="panel" style={styles.panel}>
+        <div className="panel-body">
+          <div className="text-center" style={styles.center}>
+            {`${pad(hour)}：${pad(minute)}：${pad(second)}`}
           </div>
         </div>
       </div>
-    )}
-  </div>
-);
+    </React.Fragment>
+  );
 
 export default connect(state => {
   const diff = TimeDiffService.getNext(

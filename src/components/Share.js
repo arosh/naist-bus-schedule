@@ -1,47 +1,66 @@
 import React from 'react';
 
-const btnTwitterStyle = {
-  color: '#fff',
-  backgroundColor: '#55acee',
-  borderColor: '#4ca7ed',
-  marginRight: '5px',
+// https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    margin: '0 -5px',
+  },
+  twitter: {
+    color: '#fff',
+    backgroundColor: '#55acee',
+    margin: '0 5px',
+  },
+  facebook: {
+    color: '#fff',
+    backgroundColor: '#2d4373',
+    margin: '0 5px',
+  },
+  line: {
+    color: '#fff',
+    backgroundColor: '#00b900',
+    margin: '0 5px',
+  },
 };
 
-const btnFacebookStyle = {
-  color: '#fff',
-  backgroundColor: '#2d4373',
-  borderColor: '#273b65',
-};
-
-const url = () =>
-  encodeURIComponent('https://arosh.github.io/naist-bus-schedule/');
-const tweetUrl = () =>
-  `http://twitter.com/intent/tweet?url=${url()}&text=${document.title}`;
-const facebookUrl = () => `http://www.facebook.com/sharer.php?u=${url()}`;
+const publicURL = encodeURIComponent(process.env.PUBLIC_URL);
+// prettier-ignore
+const twitterURL = `http://twitter.com/intent/tweet?url=${publicURL}&text=${document.title}`;
+const facebookURL = `http://www.facebook.com/sharer.php?u=${publicURL}`;
+const lineURL = `http://line.me/R/msg/text/?${publicURL}`;
 
 export default () => (
-  <div className="clearfix">
-    <div className="pull-right">
-      <div className="form-group">
-        <a
-          href={tweetUrl()}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="btn"
-          style={btnTwitterStyle}
-        >
-          <i className="fa fa-twitter fa-lg" /> ツイート
-        </a>
-        <a
-          href={facebookUrl()}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="btn"
-          style={btnFacebookStyle}
-        >
-          <i className="fa fa-facebook fa-lg" /> シェア
-        </a>
-      </div>
+  <div style={styles.container}>
+    <div className="form-group">
+      <a
+        href={twitterURL}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="btn"
+        style={styles.twitter}
+      >
+        <i className="fab fa-twitter fa-lg" /> ツイート
+      </a>
+      <a
+        href={facebookURL}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="btn"
+        style={styles.facebook}
+      >
+        <i className="fab fa-facebook fa-lg" /> シェア
+      </a>
+      <a
+        href={lineURL}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="btn"
+        style={styles.line}
+      >
+        <i className="fab fa-line fa-lg" /> LINEで送る
+      </a>
     </div>
   </div>
 );

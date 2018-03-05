@@ -6,7 +6,6 @@
     "@storybook/addon-links": "^3.3.14",
     "@storybook/addons": "^3.3.14",
     "@storybook/react": "^3.3.14",
-    "font-awesome": "^4.7.0",
     "holiday_jp": "holiday-jp/holiday_jp-js",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

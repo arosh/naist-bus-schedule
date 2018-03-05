@@ -1,19 +1,14 @@
+// @flow
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import '../assets/css/bootstrap.min.css';
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
+import Footer from '../components/Footer';
+import Share from '../components/Share';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+storiesOf('Footer', module).add('default', () => <Footer />);
+
+storiesOf('Share', module).add('default', () => <Share />);
