@@ -18,7 +18,7 @@ export default ({ scheduleMap }) => {
   return (
     <div className="schedule-list">
       <h2>
-        <i className="fa fa-clock-o" aria-hidden="true" /> 時刻表
+        <i className="far fa-clock" aria-hidden="true" /> 時刻表
       </h2>
       {keys.map(key => (
         <div key={key} className="panel" style={styles.panel}>

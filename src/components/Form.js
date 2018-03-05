@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export default ({
   direction,
@@ -11,7 +11,7 @@ export default ({
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
-        <i className="fa fa-exchange" aria-hidden="true" /> Direction
+        <i className="fas fa-exchange-alt" aria-hidden="true" /> Direction
       </label>
       <div className="col-sm-10 col-md-9">
         <select
@@ -29,7 +29,7 @@ export default ({
     </div>
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
-        <i className="fa fa-bus" aria-hidden="true" /> Bus Stop
+        <i className="fas fa-bus" aria-hidden="true" /> Bus Stop
       </label>
       <div className="col-sm-10 col-md-9">
         <select
@@ -50,7 +50,7 @@ export default ({
     </div>
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
-        <i className="fa fa-calendar" aria-hidden="true" /> Timetable
+        <i className="far fa-calendar-alt" aria-hidden="true" /> Timetable
       </label>
       <div className="col-sm-10 col-md-9">
         <select
