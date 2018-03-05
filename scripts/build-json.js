@@ -2,10 +2,8 @@
 
 // fsをPromise化したもの
 const fs = require('mz/fs');
-// padStartのpolyfill
-require('string.prototype.padstart').shim();
 
-function parseCsv(content /*:string*/) /*:string[]*/ {
+function parseCsv(content: string): string[] {
   const retval = [];
   const lines = content.split('\n');
   // 時刻表は5時から24時まであるので24-5+1行ある
@@ -15,6 +13,7 @@ function parseCsv(content /*:string*/) /*:string[]*/ {
     const prefix = row[0].trim().padStart(2, '0');
     for (let j = 1; j < row.length; j++) {
       const items = row[j].trim().split(/\s/);
+      // prettier-ignore
       for (const item of items) {
         if (item.length > 0) {
           const suffix = item.padStart(2, '0');
@@ -42,8 +41,9 @@ const resourceNames = [
   'to-gakuemmae-weekend',
 ];
 
-async function run() /*:Promise<void>*/ {
+async function run() {
   const store = {};
+  // prettier-ignore
   for (const resourceName of resourceNames) {
     const filename = `resources/${resourceName}.csv`;
     const data = await fs.readFile(filename);
@@ -53,4 +53,4 @@ async function run() /*:Promise<void>*/ {
   await fs.writeFile('src/resources/data.json', JSON.stringify(store));
 }
 
-run().then(() => {});
+run();

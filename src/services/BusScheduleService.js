@@ -1,18 +1,11 @@
 // @flow
-export class BusScheduleService {
-  /* ::
-  store: ?{ [string]: string[] }
-  */
-  constructor() {
-    this.store = null;
-  }
+export default class BusScheduleService {
+  schedule: ?{ [string]: string[] } = null;
   async fetch(key: string): Promise<string[]> {
-    if (this.store) {
-      return this.store[key];
+    if (this.schedule) {
+      return this.schedule[key];
     }
-    this.store = await import('../resources/data.json');
-    return this.store[key];
+    this.schedule = await import('../resources/data.json');
+    return this.schedule[key];
   }
 }
-
-export default new BusScheduleService();

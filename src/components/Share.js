@@ -6,22 +6,22 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    margin: '0 -5px',
+    marginRight: '-5px',
   },
   twitter: {
     color: '#fff',
     backgroundColor: '#55acee',
-    margin: '0 5px',
+    marginRight: '5px',
   },
   facebook: {
     color: '#fff',
     backgroundColor: '#2d4373',
-    margin: '0 5px',
+    marginRight: '5px',
   },
   line: {
     color: '#fff',
     backgroundColor: '#00b900',
-    margin: '0 5px',
+    marginRight: '5px',
   },
 };
 

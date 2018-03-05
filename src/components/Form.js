@@ -1,9 +1,13 @@
-// @flow
 import React from 'react';
-import { connect } from 'react-redux';
-import * as UseCase from '../flux/UseCase';
 
-const Form = ({ direction, busStop, timeTable, onChange }) => (
+export default ({
+  direction,
+  busStop,
+  timeTable,
+  onDirectionChange,
+  onBusStopChange,
+  onTimeTableChange,
+}) => (
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
@@ -15,7 +19,7 @@ const Form = ({ direction, busStop, timeTable, onChange }) => (
           className="form-control"
           value={direction}
           onChange={e => {
-            onChange('direction', e.target.value);
+            onDirectionChange(e.target.value);
           }}
         >
           <option value="to">NAIST行き / To NAIST</option>
@@ -33,7 +37,7 @@ const Form = ({ direction, busStop, timeTable, onChange }) => (
           className="form-control"
           value={busStop}
           onChange={e => {
-            onChange('busStop', e.target.value);
+            onBusStopChange(e.target.value);
           }}
         >
           <option value="kitaikoma">
@@ -54,7 +58,7 @@ const Form = ({ direction, busStop, timeTable, onChange }) => (
           value={timeTable}
           className="form-control"
           onChange={e => {
-            onChange('timeTable', e.target.value);
+            onTimeTableChange(e.target.value);
           }}
         >
           <option value="weekday">平日ダイヤ / weekday</option>
@@ -64,16 +68,3 @@ const Form = ({ direction, busStop, timeTable, onChange }) => (
     </div>
   </form>
 );
-
-export default connect(
-  state => ({
-    direction: state.form.direction,
-    busStop: state.form.busStop,
-    timeTable: state.form.timeTable,
-  }),
-  () => ({
-    onChange: (name, value) => {
-      UseCase.changeForm(name, value);
-    },
-  })
-)(Form);

@@ -1,30 +1,29 @@
 // @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'mobx-react';
 
 import * as serviceWorker from './registerServiceWorker';
-import App from './components/App';
-import store, { initialize } from './flux/Store';
-import * as UseCase from './flux/UseCase';
+import App from './containers/App';
+import createStores from './stores';
 import './assets/css/bootstrap.min.css';
 
-initialize();
+const stores = createStores();
 
-UseCase.changeCurrentTime();
+stores.timeTableStore.updateNow();
 
 setInterval(() => {
-  UseCase.changeCurrentTime();
+  stores.timeTableStore.updateNow();
 }, 1000);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const rootEl = document.getElementById('react-root');
-  if (rootEl) {
+  const elem = document.getElementById('react-root');
+  if (elem) {
     ReactDOM.render(
-      <Provider store={store}>
+      <Provider {...stores}>
         <App />
       </Provider>,
-      rootEl
+      elem
     );
   }
 });

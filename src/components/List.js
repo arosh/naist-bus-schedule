@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
 
 const styles = {
   panel: {
@@ -13,7 +12,7 @@ const styles = {
   },
 };
 
-const List = ({ scheduleMap }) => {
+export default ({ scheduleMap }) => {
   const keys = Object.keys(scheduleMap);
   keys.sort();
   return (
@@ -38,7 +37,3 @@ const List = ({ scheduleMap }) => {
     </div>
   );
 };
-
-export default connect(state => ({
-  scheduleMap: state.scheduleMap,
-}))(List);

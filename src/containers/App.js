@@ -1,9 +1,8 @@
-// @flow
 import React from 'react';
+import Footer from '../components/Footer';
+import Share from '../components/Share';
 import Form from './Form';
 import List from './List';
-import Footer from './Footer';
-import Share from './Share';
 import Next from './Next';
 
 const styles = {

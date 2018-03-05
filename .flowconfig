@@ -3,7 +3,11 @@
 [include]
 
 [libs]
-
-[options]
+node_modules/mobx/lib/mobx.js.flow
 
 [lints]
+
+[options]
+esproposal.decorators=ignore
+
+[strict]

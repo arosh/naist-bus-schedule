@@ -1,5 +1,5 @@
 // @flow
-export class SplitScheduleService {
+export default class SplitScheduleService {
   split(schedule: string[]): { [hour: string]: string[] } {
     const map: { [hour: string]: string[] } = {};
     for (let i = 0; i < schedule.length; i++) {
@@ -15,5 +15,3 @@ export class SplitScheduleService {
     return map;
   }
 }
-
-export default new SplitScheduleService();
