@@ -21,9 +21,9 @@ const styles = {
     marginRight: '5px',
   },
   logo: {
-    width: 32,
-    height: 32,
-  }
+    width: 48,
+    height: 48,
+  },
 };
 
 const publicURL = encodeURIComponent(process.env.PUBLIC_URL);
