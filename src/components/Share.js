@@ -1,4 +1,7 @@
 import React from 'react';
+import twitterLogo from '../assets/brands/Twitter_Social_Icon_Square_Color.svg';
+import facebookLogo from '../assets/brands/FB-f-Logo__blue_100.png';
+import lineLogo from '../assets/brands/LINE_SOCIAL_Square_typeA.png';
 
 // https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
 const styles = {
@@ -9,20 +12,18 @@ const styles = {
     marginRight: '-5px',
   },
   twitter: {
-    color: '#fff',
-    backgroundColor: '#55acee',
     marginRight: '5px',
   },
   facebook: {
-    color: '#fff',
-    backgroundColor: '#2d4373',
     marginRight: '5px',
   },
   line: {
-    color: '#fff',
-    backgroundColor: '#00b900',
     marginRight: '5px',
   },
+  logo: {
+    width: 32,
+    height: 32,
+  }
 };
 
 const publicURL = encodeURIComponent(process.env.PUBLIC_URL);
@@ -38,28 +39,25 @@ export default () => (
         href={twitterURL}
         target="_blank"
         rel="noreferrer noopener"
-        className="btn"
         style={styles.twitter}
       >
-        <i className="fab fa-twitter fa-lg" /> ツイート
+        <img src={twitterLogo} alt="twitter logo" style={styles.logo} />
       </a>
       <a
         href={facebookURL}
         target="_blank"
         rel="noreferrer noopener"
-        className="btn"
         style={styles.facebook}
       >
-        <i className="fab fa-facebook fa-lg" /> シェア
+        <img src={facebookLogo} alt="facebook logo" style={styles.logo} />
       </a>
       <a
         href={lineURL}
         target="_blank"
         rel="noreferrer noopener"
-        className="btn"
         style={styles.line}
       >
-        <i className="fab fa-line fa-lg" /> LINEで送る
+        <img src={lineLogo} alt="LINE logo" style={styles.logo} />
       </a>
     </div>
   </div>
