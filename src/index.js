@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './registerServiceWorker';
 import App from './components/App';
 import store, { initialize } from './flux/Store';
 import * as UseCase from './flux/UseCase';
@@ -29,4 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-registerServiceWorker();
+serviceWorker.register();
