@@ -37,8 +37,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
+    "deploy": "yarn build && gh-pages -d build",
     "analyze": "yarn build && source-map-explorer build/static/js/main.*",
     "flow": "flow",
     "lint": "eslint --fix src",
