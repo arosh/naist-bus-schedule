@@ -37,13 +37,13 @@ const facebookURL = `http://www.facebook.com/sharer.php?u=${publicURL}`;
 const lineURL = `http://line.me/R/msg/text/?${publicURL}`;
 
 export default () => (
-  <div style={styles.container}>
-    <div className="form-group">
+  <div className="form-group">
+    <div style={styles.container}>
       <a href={twitterURL} target="_blank" rel="noreferrer noopener">
-        <img src={twitterLogo} alt="twitter logo" style={styles.twitter} />
+        <img src={twitterLogo} alt="Twitter logo" style={styles.twitter} />
       </a>
       <a href={facebookURL} target="_blank" rel="noreferrer noopener">
-        <img src={facebookLogo} alt="facebook logo" style={styles.facebook} />
+        <img src={facebookLogo} alt="Facebook logo" style={styles.facebook} />
       </a>
       <a href={lineURL} target="_blank" rel="noreferrer noopener">
         <img src={lineLogo} alt="LINE logo" style={styles.line} />

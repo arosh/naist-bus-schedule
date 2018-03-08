@@ -9,16 +9,13 @@ const styles = {
   footer: {
     margin: '28px 0 40px',
   },
-  title: {
-    textAlign: 'center',
-  },
 };
 
 export default () => (
   <div className="container">
     <div className="row">
       <div className="col-md-offset-2 col-md-8">
-        <h1 style={styles.title}>{document.title}</h1>
+        <h1 className="text-center">{document.title}</h1>
         <Share />
         <Form />
         <Next />
