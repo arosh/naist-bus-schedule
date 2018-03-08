@@ -32,7 +32,7 @@ class PageObject {
 
   async search(target) {
     return this.browser
-      .element('.schedule-list > div > ul')
+      .element('.time-table-js > div > ul')
       .isExisting(`li=${target}`);
   }
 }

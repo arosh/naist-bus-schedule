@@ -7,9 +7,9 @@ export default inject(({ timeTableStore }: Stores) => {
   if (timeTableStore.nextHour !== -1) {
     return {
       exist: true,
-      hour: timeTableStore.nextHour,
-      minute: timeTableStore.nextMinute,
-      second: timeTableStore.nextSecond,
+      hours: timeTableStore.nextHour,
+      minutes: timeTableStore.nextMinute,
+      seconds: timeTableStore.nextSecond,
     };
   }
   return {

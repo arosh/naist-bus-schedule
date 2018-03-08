@@ -1,13 +1,23 @@
+// @flow
 import * as React from 'react';
+
+type Props = {
+  direction: string,
+  busStop: string,
+  scheduleType: string,
+  onDirectionChange: string => void,
+  onBusStopChange: string => void,
+  onScheduleTypeChange: string => void,
+};
 
 export default ({
   direction,
   busStop,
-  timeTable,
+  scheduleType,
   onDirectionChange,
   onBusStopChange,
-  onTimeTableChange,
-}) => (
+  onScheduleTypeChange,
+}: Props) => (
   <form className="form-horizontal">
     <div className="form-group">
       <label className="col-sm-2 col-md-3 control-label">
@@ -55,10 +65,10 @@ export default ({
       <div className="col-sm-10 col-md-9">
         <select
           name="timeTable"
-          value={timeTable}
+          value={scheduleType}
           className="form-control"
           onChange={e => {
-            onTimeTableChange(e.target.value);
+            onScheduleTypeChange(e.target.value);
           }}
         >
           <option value="weekday">平日ダイヤ / weekday</option>

@@ -14,21 +14,19 @@ const styles = {
   },
   twitter: {
     marginRight: '5px',
+    width: 48,
+    height: 48,
   },
   facebook: {
     marginRight: '5px',
-  },
-  line: {
-    marginRight: '5px',
-  },
-  logo: {
-    width: 48,
-    height: 48,
-  },
-  logoFacebook: {
     width: 48,
     height: 48,
     backgroundColor: '#3b5998',
+  },
+  line: {
+    marginRight: '5px',
+    width: 48,
+    height: 48,
   },
 };
 
@@ -41,33 +39,14 @@ const lineURL = `http://line.me/R/msg/text/?${publicURL}`;
 export default () => (
   <div style={styles.container}>
     <div className="form-group">
-      <a
-        href={twitterURL}
-        target="_blank"
-        rel="noreferrer noopener"
-        style={styles.twitter}
-      >
-        <img src={twitterLogo} alt="twitter logo" style={styles.logo} />
+      <a href={twitterURL} target="_blank" rel="noreferrer noopener">
+        <img src={twitterLogo} alt="twitter logo" style={styles.twitter} />
       </a>
-      <a
-        href={facebookURL}
-        target="_blank"
-        rel="noreferrer noopener"
-        style={styles.facebook}
-      >
-        <img
-          src={facebookLogo}
-          alt="facebook logo"
-          style={styles.logoFacebook}
-        />
+      <a href={facebookURL} target="_blank" rel="noreferrer noopener">
+        <img src={facebookLogo} alt="facebook logo" style={styles.facebook} />
       </a>
-      <a
-        href={lineURL}
-        target="_blank"
-        rel="noreferrer noopener"
-        style={styles.line}
-      >
-        <img src={lineLogo} alt="LINE logo" style={styles.logo} />
+      <a href={lineURL} target="_blank" rel="noreferrer noopener">
+        <img src={lineLogo} alt="LINE logo" style={styles.line} />
       </a>
     </div>
   </div>

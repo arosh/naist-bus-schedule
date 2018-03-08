@@ -1,14 +1,8 @@
 // @flow
 import React from 'react';
 
-const styles = {
-  footer: {
-    textAlign: 'center',
-  },
-};
-
 export default () => (
-  <div style={styles.footer}>
+  <div className="text-center">
     <p>Last modified: 2018/03/05</p>
     <p>
       Icons made by{' '}
