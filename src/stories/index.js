@@ -9,6 +9,7 @@ import '../assets/css/bootstrap.min.css';
 import Footer from '../components/Footer';
 import Share from '../components/Share';
 import Next from '../components/Next';
+import Arrow from '../components/Arrow';
 
 storiesOf('Footer', module).add('default', () => <Footer />);
 
@@ -17,3 +18,5 @@ storiesOf('Next', module).add('default', () => (
 ));
 
 storiesOf('Share', module).add('default', () => <Share />);
+
+storiesOf('Arrow', module).add('default', () => <Arrow />);
