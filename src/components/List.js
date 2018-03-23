@@ -20,7 +20,7 @@ export default ({ scheduleMap }: Props) => {
   const keys = Object.keys(scheduleMap);
   keys.sort();
   return (
-    <div className="schedule-list">
+    <div className="time-table-js">
       <h2>
         <i className="far fa-clock" aria-hidden="true" /> 時刻表
       </h2>

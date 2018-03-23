@@ -6,8 +6,8 @@ import type { Stores } from '../stores';
 export default inject(({ timeTableStore }: Stores) => ({
   direction: timeTableStore.direction,
   busStop: timeTableStore.busStop,
-  timeTable: timeTableStore.scheduleType,
+  scheduleType: timeTableStore.scheduleType,
   onDirectionChange: timeTableStore.setDirection,
   onBusStopChange: timeTableStore.setBusStop,
-  onTimeTableChange: timeTableStore.setScheduleType,
+  onScheduleTypeChange: timeTableStore.setScheduleType,
 }))(Form);

@@ -1,4 +1,5 @@
 import test from 'ava';
+
 const webdriverio = require('webdriverio');
 
 class PageObject {
@@ -7,21 +8,15 @@ class PageObject {
   }
 
   async setDirection(direction) {
-    return this.browser.selectByVisibleText(
-      'select[name="direction"]',
-      direction
-    );
+    return this.browser.selectByVisibleText('#direction', direction);
   }
 
   async setBusStop(busStop) {
-    return this.browser.selectByVisibleText('select[name="busStop"]', busStop);
+    return this.browser.selectByVisibleText('#busStop', busStop);
   }
 
   async setTimeTable(timeTable) {
-    return this.browser.selectByVisibleText(
-      'select[name="timeTable"]',
-      timeTable
-    );
+    return this.browser.selectByVisibleText('#scheduleType', timeTable);
   }
 
   async setForms(direction, busStop, timetable) {
@@ -32,7 +27,7 @@ class PageObject {
 
   async search(target) {
     return this.browser
-      .element('.schedule-list > div > ul')
+      .element('.time-table-js > div > ul')
       .isExisting(`li=${target}`);
   }
 }
@@ -41,11 +36,11 @@ const browser = webdriverio.remote({
   desiredCapabilities: { browserName: 'chrome' },
 });
 
-test.before(async t => {
+test.before(async () => {
   await browser.init().url('http://localhost:3000');
 });
 
-test.after.always(async t => {
+test.after.always(async () => {
   await browser.end();
 });
 
