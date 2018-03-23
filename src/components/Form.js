@@ -1,4 +1,14 @@
+// @flow
 import * as React from 'react';
+
+type Props = {
+  direction: string,
+  busStop: string,
+  timeTable: string,
+  onDirectionChange: string => void,
+  onBusStopChange: string => void,
+  onTimeTableChange: string => void,
+};
 
 export default ({
   direction,
@@ -7,14 +17,15 @@ export default ({
   onDirectionChange,
   onBusStopChange,
   onTimeTableChange,
-}) => (
+}: Props) => (
   <form className="form-horizontal">
     <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label">
+      <label className="col-sm-2 col-md-3 control-label" htmlFor="direction">
         <i className="fas fa-exchange-alt" aria-hidden="true" /> Direction
       </label>
       <div className="col-sm-10 col-md-9">
         <select
+          id="direction"
           name="direction"
           className="form-control"
           value={direction}
@@ -28,11 +39,12 @@ export default ({
       </div>
     </div>
     <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label">
+      <label className="col-sm-2 col-md-3 control-label" htmlFor="busStop">
         <i className="fas fa-bus" aria-hidden="true" /> Bus Stop
       </label>
       <div className="col-sm-10 col-md-9">
         <select
+          id="busStop"
           name="busStop"
           className="form-control"
           value={busStop}
@@ -49,11 +61,12 @@ export default ({
       </div>
     </div>
     <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label">
+      <label className="col-sm-2 col-md-3 control-label" htmlFor="timeTable">
         <i className="far fa-calendar-alt" aria-hidden="true" /> Timetable
       </label>
       <div className="col-sm-10 col-md-9">
         <select
+          id="timeTable"
           name="timeTable"
           value={timeTable}
           className="form-control"

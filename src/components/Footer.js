@@ -39,5 +39,18 @@ export default () => (
         CC 3.0 BY
       </a>
     </p>
+    <p>
+      Note: Because a developer of this application graduated from NAIST in
+      March 2018, the latest timetable may not be reflected in this application.
+      Please{' '}
+      <a
+        href="https://github.com/arosh/naist-bus-schedule/issues/new"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        submit an issue
+      </a>{' '}
+      if you notice it.
+    </p>
   </div>
 );

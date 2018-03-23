@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 
 const styles = {
@@ -11,7 +12,11 @@ const styles = {
   },
 };
 
-export default ({ scheduleMap }) => {
+type Props = {
+  scheduleMap: { [string]: string[] },
+};
+
+export default ({ scheduleMap }: Props) => {
   const keys = Object.keys(scheduleMap);
   keys.sort();
   return (
