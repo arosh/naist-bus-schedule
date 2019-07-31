@@ -23,6 +23,7 @@ export const BUS_STOP = {
   KITAIKOMA: 'kitaikoma',
   GAKUEMMAE: 'gakuemmae',
   TAKANOHARA: 'takanohara',
+  TOMIGAOKA: 'tomigaoka',
 };
 
 export const SCHEDULE = {

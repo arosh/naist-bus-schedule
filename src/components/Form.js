@@ -18,10 +18,10 @@ export default ({
   onBusStopChange,
   onScheduleTypeChange,
 }: Props) => (
-  <form className="form-horizontal">
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="direction">
-        <i className="fas fa-exchange-alt" aria-hidden="true" /> Direction
+  <form className='form-horizontal'>
+    <div className='form-group'>
+      <label className='col-sm-2 col-md-3 control-label' htmlFor='direction'>
+        <i className='fas fa-exchange-alt' aria-hidden='true' /> Direction
       </label>
       <div className="col-sm-10 col-md-9">
         <select
@@ -38,9 +38,9 @@ export default ({
         </select>
       </div>
     </div>
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="busStop">
-        <i className="fas fa-bus" aria-hidden="true" /> Bus Stop
+    <div className='form-group'>
+      <label className='col-sm-2 col-md-3 control-label' htmlFor='busStop'>
+        <i className='fas fa-bus' aria-hidden='true' /> Bus Stop
       </label>
       <div className="col-sm-10 col-md-9">
         <select
@@ -56,12 +56,13 @@ export default ({
           </option>
           <option value="gakuemmae">学園前駅 / Gakuemmae Station</option>
           <option value="takanohara">高の原駅 / Takanohara Station</option>
+          <option value="tomigaoka">登美ヶ丘  / Tomigaoka Station</option>
         </select>
       </div>
     </div>
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="scheduleType">
-        <i className="far fa-calendar-alt" aria-hidden="true" /> Timetable
+    <div className='form-group'>
+      <label className='col-sm-2 col-md-3 control-label' htmlFor='scheduleType'>
+        <i className='far fa-calendar-alt' aria-hidden='true' /> Timetable
       </label>
       <div className="col-sm-10 col-md-9">
         <select

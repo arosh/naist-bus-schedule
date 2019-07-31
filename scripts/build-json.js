@@ -39,6 +39,10 @@ const resourceNames = [
   'from-gakuemmae-weekend',
   'to-gakuemmae-weekday',
   'to-gakuemmae-weekend',
+  'from-tomigaoka-weekday',
+  'from-tomigaoka-weekend',
+  'to-tomigaoka-weekday',
+  'to-tomigaoka-weekend',
 ];
 
 async function run() {
