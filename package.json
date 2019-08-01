@@ -38,8 +38,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "deploy": "yarn build && gh-pages -d build",
-    "analyze": "yarn build && source-map-explorer build/static/js/main.*",
+    "deploy": "npm run build && gh-pages -d build",
+    "analyze": "npm run build && source-map-explorer build/static/js/main.*",
     "build:json": "flow-node scripts/build-json.js",
     "flow": "flow",
     "lint": "eslint --fix src",
