@@ -1,11 +1,10 @@
 {
   "private": true,
   "dependencies": {
-    "@holiday-jp/holiday_jp": "holiday-jp/holiday_jp-js",
+    "@holiday-jp/holiday_jp": "^2.2.2",
     "@storybook/addon-actions": "^3.3.15",
     "@storybook/addons": "^3.3.15",
     "@storybook/react": "^3.3.15",
-    "holiday_jp": "holiday-jp/holiday_jp-js",
     "mobx": "<4.0.0",
     "mobx-react": "<5.0.0",
     "react": "^16.2.0",

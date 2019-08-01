@@ -51,12 +51,10 @@ export default ({
             onBusStopChange(e.target.value);
           }}
         >
-          <option value="kitaikoma">
-            学研北生駒駅 / Gakken Kita Ikoma Station
-          </option>
+          <option value="kitaikoma">学研北生駒駅 / Gakken Kita Ikoma Station</option>
           <option value="gakuemmae">学園前駅 / Gakuemmae Station</option>
           <option value="takanohara">高の原駅 / Takanohara Station</option>
-          <option value="tomigaoka">登美ヶ丘  / Tomigaoka Station</option>
+          <option value="tomigaoka">登美ヶ丘駅 / Tomigaoka Station</option>
         </select>
       </div>
     </div>

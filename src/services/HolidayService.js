@@ -1,7 +1,7 @@
 // @flow
 
 // 他には https://github.com/hitsujiwool/node-holiday-jp などが有望？
-import * as Holiday from 'holiday_jp';
+import * as Holiday from '@holiday-jp/holiday_jp';
 
 export default class HolidayService {
   // 以下のようなコードを書くことで日付を上書きできる
