@@ -30,7 +30,7 @@
     "react-app-rewire-mobx": "1.0.9",
     "react-app-rewired": "1.6.2",
     "react-scripts": "1.1.5",
-    "selenium-standalone": "6.16.0",
+    "selenium-standalone": "6.17.0",
     "source-map-explorer": "1.8.0",
     "webdriverio": "4.14.4"
   },
