@@ -26,7 +26,7 @@
     "flow-node": "1.2.3",
     "gh-pages": "1.2.0",
     "mz": "2.7.0",
-    "prettier": "1.18.2",
+    "prettier": "1.19.1",
     "react-app-rewire-mobx": "1.0.9",
     "react-app-rewired": "1.6.2",
     "react-scripts": "1.1.5",
