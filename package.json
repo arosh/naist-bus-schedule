@@ -28,7 +28,7 @@
     "mz": "2.7.0",
     "prettier": "1.19.1",
     "react-app-rewire-mobx": "1.0.9",
-    "react-app-rewired": "1.6.2",
+    "react-app-rewired": "2.1.5",
     "react-scripts": "1.1.5",
     "selenium-standalone": "6.17.0",
     "source-map-explorer": "1.8.0",
