@@ -24,7 +24,7 @@
     "eslint-plugin-react": "7.17.0",
     "flow-bin": "0.68.0",
     "flow-node": "1.2.3",
-    "gh-pages": "1.2.0",
+    "gh-pages": "2.1.1",
     "mz": "2.7.0",
     "prettier": "1.19.1",
     "react-app-rewire-mobx": "1.0.9",
