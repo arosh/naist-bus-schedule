@@ -22,7 +22,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "2.7.0",
     "eslint-plugin-react": "7.17.0",
-    "flow-bin": "0.114.0",
+    "flow-bin": "0.115.0",
     "flow-node": "2.114.0",
     "gh-pages": "2.1.1",
     "mz": "2.7.0",
