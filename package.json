@@ -32,7 +32,7 @@
     "react-scripts": "1.1.5",
     "selenium-standalone": "6.17.0",
     "source-map-explorer": "1.8.0",
-    "webdriverio": "4.14.4"
+    "webdriverio": "5.18.5"
   },
   "scripts": {
     "start": "react-app-rewired start",
