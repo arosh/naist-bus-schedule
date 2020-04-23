@@ -2,6 +2,28 @@
 
 // fsをPromise化したもの
 const fs = require('mz/fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+
+const resourceNames = [
+  'from-kitaikoma-weekday',
+  'from-kitaikoma-weekend',
+  'to-kitaikoma-weekday',
+  'to-kitaikoma-weekend',
+  'from-takanohara-weekday',
+  'from-takanohara-weekend',
+  'to-takanohara-weekday',
+  'to-takanohara-weekend',
+  'from-gakuemmae-weekday',
+  'from-gakuemmae-weekend',
+  'to-gakuemmae-weekday',
+  'to-gakuemmae-weekend',
+  'from-tomigaoka-weekday',
+  'from-tomigaoka-weekend',
+  'to-tomigaoka-weekday',
+  'to-tomigaoka-weekend',
+];
 
 function parseCsv(content: string): string[] {
   const retval = [];
@@ -26,35 +48,17 @@ function parseCsv(content: string): string[] {
   return retval;
 }
 
-const resourceNames = [
-  'from-kitaikoma-weekday',
-  'from-kitaikoma-weekend',
-  'to-kitaikoma-weekday',
-  'to-kitaikoma-weekend',
-  'from-takanohara-weekday',
-  'from-takanohara-weekend',
-  'to-takanohara-weekday',
-  'to-takanohara-weekend',
-  'from-gakuemmae-weekday',
-  'from-gakuemmae-weekend',
-  'to-gakuemmae-weekday',
-  'to-gakuemmae-weekend',
-  'from-tomigaoka-weekday',
-  'from-tomigaoka-weekend',
-  'to-tomigaoka-weekday',
-  'to-tomigaoka-weekend',
-];
-
 async function run() {
   const store = {};
   // prettier-ignore
   for (const resourceName of resourceNames) {
-    const filename = `resources/${resourceName}.csv`;
+    const filename = path.join(ROOT, 'resources', `${resourceName}.csv`);
     const data = await fs.readFile(filename);
     const content = data.toString();
     store[resourceName] = parseCsv(content);
   }
-  await fs.writeFile('src/resources/data.json', JSON.stringify(store));
+  const targetFilename = path.join(ROOT, 'src', 'resources', 'data.json');
+  await fs.writeFile(targetFilename, JSON.stringify(store));
 }
 
 run();
