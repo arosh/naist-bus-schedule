@@ -34,8 +34,8 @@ export default () => (
       </a>
     </p>
     <p>
-      Note: Because a developer of this application graduated from NAIST in
-      March 2018, the latest timetable may not be reflected in this application.
+      Note: The developer of this application graduated from NAIST in
+      March 2018. Therefore, the latest timetable may not be reflected in this application.
       Please{' '}
       <a
         href="https://github.com/arosh/naist-bus-schedule/issues/new"
