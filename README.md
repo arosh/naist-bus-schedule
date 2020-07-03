@@ -14,7 +14,7 @@ Edit CSV files under [resources](https://github.com/arosh/naist-bus-schedule/tre
 
 ### Why you use such a ridiculous format?
 
-Well... Nara Kotsu's latest system provides timetable data in PDF format, whereas the previous system provided them in HTML table format. In those days, HTML tables could be converted to machine-readable CSVs by formatting them in Excel or Google Spreadsheets. Since Nara Kotsu has upgraded the timetable system, we understand that the format currently in use is useless.
+Well... Nara Kotsu's latest system provides timetable data in PDF format, whereas the previous system provided them in HTML table format. In those days, HTML tables could be converted to machine-readable CSVs by formatting them in Excel or Google Spreadsheets. It was the easiest way to obtain machine-readable timetable data without complicated parsing programs. Since Nara Kotsu has upgraded the timetable system, the original author understands that this format is no longer useful.
 
 ## License
 
