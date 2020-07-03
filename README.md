@@ -10,7 +10,7 @@ Your contribution is welcome.
 
 ### What should I do?
 
-Edit CSVs under [resources](https://github.com/arosh/naist-bus-schedule/tree/master/resources) directory. The first column in each row means hour, and the others mean minutes. [#34](https://github.com/arosh/naist-bus-schedule/pull/34) is one of good examples.
+Edit CSVs under [resources](./resources) directory. The first column in each row means hour, and the others mean minutes. [#34](https://github.com/arosh/naist-bus-schedule/pull/34) is one of good examples.
 
 ### Why does the original author use such a ridiculous format?
 
@@ -28,4 +28,5 @@ No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.js
 
 ## License
 
+* This software is released under the MIT license. See [LICENSE](./LICENSE)
 * Icons made by [Freepik](http://www.freepik.com) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
