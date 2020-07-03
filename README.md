@@ -20,6 +20,12 @@ Well... Nara Kotsu's latest system provides timetable data in PDF format, wherea
 
 No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is no longer required. GitHub Actions automatically generate it.
 
+## Contributors
+
+* [@speedcell4](https://github.com/speedcell4) added timetables between Tomigaoka station and NAIST.
+* [@keichi](https://github.com/keichi) updated the timetable to the latest in Apr. 2020.
+* [@kumahika](https://github.com/kumahika) updated the timetable to the latest in Jun. 2020.
+
 ## License
 
 * Icons made by [Freepik](http://www.freepik.com) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
