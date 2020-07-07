@@ -48,5 +48,5 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "homepage": "https://arosh.github.io/naist-bus-schedule/"
+  "homepage": "https://naist-bus-schedule.arosh.dev/"
 }
