@@ -38,7 +38,7 @@ export default () => (
       March 2018. Therefore, the latest timetable may not be reflected in this application.
       Please{' '}
       <a
-        href="https://github.com/arosh/naist-bus-schedule/issues/new"
+        href="https://github.com/arosh/naist-bus-schedule/issues"
         target="_blank"
         rel="noopener noreferrer"
       >
