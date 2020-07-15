@@ -18,7 +18,7 @@ Well... Nara Kotsu's latest system provides timetable data in PDF format, wherea
 
 ### Should I include `data.json` in the PR?
 
-No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is no longer required. GitHub Actions automatically generate it.
+No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is not needed anymore. GitHub Actions now automatically generate it.
 
 ## Contributors
 
