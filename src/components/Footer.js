@@ -3,7 +3,7 @@ import React from 'react';
 
 export default () => (
   <div className="text-center">
-    <p>Last modified: 2021-11-03</p>
+    <p>Last modified: 2021-11-12</p>
     <p>
       Icons made by{' '}
       <a
