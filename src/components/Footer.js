@@ -34,17 +34,14 @@ export default () => (
       </a>
     </p>
     <p>
-      Note: The developer of this application graduated from NAIST in
-      March 2018. Therefore, the latest timetable may not be reflected in this application.
-      Please{' '}
+      If you find anything different in this timetable from the official one, please{' '}
       <a
         href="https://github.com/arosh/naist-bus-schedule/issues"
         target="_blank"
         rel="noopener noreferrer"
       >
         submit an issue
-      </a>{' '}
-      if you notice it.
+      </a>.
     </p>
   </div>
 );
