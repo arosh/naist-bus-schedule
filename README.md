@@ -4,21 +4,21 @@ http://www.naist.jp/accessmap/
 
 ## How to contribute
 
-### I notice that the timetable is out of date.
+### I noticed that the timetable is out of date.
 
 Your contribution is welcome.
 
 ### What should I do?
 
-Edit CSVs under [resources](./resources) directory. The first column in each row means hour, and the others mean minutes. [#34](https://github.com/arosh/naist-bus-schedule/pull/34) is one of good examples.
+Edit the CSV files under [resources](./resources) directory. The first column in each row represents the hour, and the others represent the minutes. [#34](https://github.com/arosh/naist-bus-schedule/pull/34) is a good example.
 
 ### Why does the original author use such a ridiculous CSV format?
 
-Well... Nara Kotsu's latest system provides timetable data in PDF format, whereas the previous system provided them in HTML table format. In those days, HTML tables could be converted to machine-readable CSVs by formatting them in Excel or Google Spreadsheets. It was the easiest way to obtain machine-readable timetable data without complicated parsing programs. Since Nara Kotsu has upgraded the timetable system, the original author understands that this format is no longer useful.
+Well... Nara Kotsu's latest system provides timetable data in PDF format, whereas the previous system provided it in an HTML table format. In those days, HTML tables could be converted to machine-readable CSVs by formatting them in Excel or Google Spreadsheets. It was the easiest way to obtain machine-readable timetable data without complicated parsing programs. Since Nara Kotsu upgraded the timetable system, the original author understands that this format is no longer useful.
 
 ### Should I include `data.json` in the PR?
 
-No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is not needed anymore. GitHub Actions now automatically generate it.
+No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is no longer needed. GitHub Actions now automatically generate it.
 
 ## Contributors
 
@@ -30,5 +30,5 @@ No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.js
 
 ## License
 
-* This software is released under the MIT license. See [LICENSE](./LICENSE)
-* Icons made by [Freepik](http://www.freepik.com) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+* This software is released under the MIT license. See [LICENSE](./LICENSE).
+* Icons made by [Freepik](http://www.freepik.com) from [www.flaticon.com](http://www.flaticon.com) are licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
