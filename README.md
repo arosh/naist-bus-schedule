@@ -27,6 +27,7 @@ No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.js
 * [@kumahika](https://github.com/kumahika) updated the timetable to the latest in Jun. 2020.
 * [@tsubakittr](https://github.com/tsubakittr) updated the timetable to the latest in Nov. 2021.
 * [@lfyao](https://github.com/lfyao) fixed mistakes in the timetables.
+* [@JosephAyo](https://github.com/JosephAyo) updated the timetable to the latest.
 
 ## License
 
