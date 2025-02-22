@@ -3,16 +3,14 @@ import {
   observable,
   action,
   computed,
-  useStrict,
   autorun,
   runInAction,
+  makeObservable,
 } from 'mobx';
 import BusScheduleService from '../services/BusScheduleService';
 import SplitScheduleService from '../services/SplitScheduleService';
 import TimeDiffService from '../services/TimeDiffService';
 import HolidayService from '../services/HolidayService';
-
-useStrict(true);
 
 export const DIRECTION = {
   TO_NAIST: 'to',
@@ -32,16 +30,16 @@ export const SCHEDULE = {
 };
 
 export class TimeTableStore {
-  @observable direction: string;
-  @observable busStop: string;
-  @observable scheduleType: string;
-  @observable timeTable: string[] = [];
-  @observable nowHours = 0;
-  @observable nowMinutes = 0;
-  @observable nowSeconds = 0;
-  @observable nextHour: number;
-  @observable nextMinute: number;
-  @observable nextSecond: number;
+  direction: string;
+  busStop: string;
+  scheduleType: string;
+  timeTable: string[] = [];
+  nowHours = 0;
+  nowMinutes = 0;
+  nowSeconds = 0;
+  nextHour: number = 0;
+  nextMinute: number = 0;
+  nextSecond: number = 0;
 
   busScheduleService = new BusScheduleService();
   splitScheduleService = new SplitScheduleService();
@@ -56,6 +54,26 @@ export class TimeTableStore {
       holidayService.checkIfTodayIsWeekend()
         ? SCHEDULE.WEEKEND
         : SCHEDULE.WEEKDAY;
+
+    makeObservable(this, {
+      // makeObservable をコンストラクタ内で呼び出す
+      direction: observable,
+      busStop: observable,
+      scheduleType: observable,
+      timeTable: observable,
+      nowHours: observable,
+      nowMinutes: observable,
+      nowSeconds: observable,
+      nextHour: observable,
+      nextMinute: observable,
+      nextSecond: observable,
+      timeTableMap: computed,
+      setDirection: action.bound,
+      setBusStop: action.bound,
+      setScheduleType: action.bound,
+      updateNow: action.bound,
+    });
+
     autorun(async () => {
       // フォームのfrom, toとresourcesのfrom, toを間違えやすいので注意
       const canonicalDirection = this.direction === 'from' ? 'to' : 'from';
@@ -81,27 +99,22 @@ export class TimeTableStore {
     });
   }
 
-  @computed
   get timeTableMap(): { [string]: string[] } {
     return this.splitScheduleService.split(this.timeTable);
   }
 
-  @action.bound
   setDirection = (direction: string) => {
     this.direction = direction;
   };
 
-  @action.bound
   setBusStop = (busStop: string) => {
     this.busStop = busStop;
   };
 
-  @action.bound
   setScheduleType = (schedule: string) => {
     this.scheduleType = schedule;
   };
 
-  @action.bound
   updateNow = () => {
     const date = new Date();
     this.nowHours = date.getHours();

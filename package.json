@@ -1,35 +1,34 @@
 {
   "private": true,
   "dependencies": {
-    "@holiday-jp/holiday_jp": "2.3.0",
+    "@holiday-jp/holiday_jp": "2.4.0",
     "@storybook/addon-actions": "3.4.12",
     "@storybook/addons": "3.4.12",
     "@storybook/react": "3.4.12",
-    "mobx": "3.6.2",
-    "mobx-react": "4.4.3",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "mobx": "6.x",
+    "mobx-react": "9.x",
+    "react": "18.x",
+    "react-dom": "18.x"
   },
   "devDependencies": {
     "ava": "0.25.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.6",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-config-prettier": "2.10.0",
-    "eslint-plugin-flowtype": "2.50.3",
-    "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "2.7.0",
-    "eslint-plugin-react": "7.17.0",
+    "customize-cra": "^1.0.0",
+    "eslint": "8.x",
+    "eslint-config-prettier": "10.x",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-flowtype": "8.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "5.x",
+    "eslint-plugin-react": "7.x",
     "flow-bin": "0.140.0",
     "flow-node": "2.140.0",
-    "gh-pages": "2.1.1",
     "mz": "2.7.0",
-    "prettier": "1.19.1",
-    "react-app-rewire-mobx": "1.0.9",
-    "react-app-rewired": "1.6.2",
-    "react-scripts": "1.1.5",
+    "prettier": "3.x",
+    "react-app-rewired": "^2.2.1",
+    "react-scripts": "5.x",
     "selenium-standalone": "6.17.0",
     "source-map-explorer": "1.8.0",
     "webdriverio": "4.14.4"
@@ -37,7 +36,6 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "deploy": "npm run build && gh-pages -d build",
     "analyze": "npm run build && source-map-explorer build/static/js/main.*",
     "build:json": "flow-node scripts/build-json.js",
     "flow": "flow",
@@ -48,5 +46,17 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "homepage": "https://naist.arosh.dev/"
+  "homepage": "https://naist.arosh.dev/",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

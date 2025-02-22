@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { Provider } from 'mobx-react';
 
 import * as serviceWorker from './registerServiceWorker';
@@ -19,11 +19,13 @@ setInterval(() => {
 document.addEventListener('DOMContentLoaded', () => {
   const elem = document.getElementById('react-root');
   if (elem) {
-    ReactDOM.render(
-      <Provider {...stores}>
-        <App />
-      </Provider>,
-      elem
+    const root = ReactDOM.createRoot(elem);
+    root.render(
+      <React.StrictMode>
+        <Provider {...stores}>
+          <App />
+        </Provider>
+      </React.StrictMode>
     );
   }
 });

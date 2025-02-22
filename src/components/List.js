@@ -24,13 +24,13 @@ export default ({ scheduleMap }: Props) => {
       <h2>
         <i className="far fa-clock" aria-hidden="true" /> 時刻表
       </h2>
-      {keys.map(key => (
+      {keys.map((key) => (
         <div key={key} className="panel" style={styles.panel}>
           <div className="panel-heading" style={styles.panelHeading}>
             {key}
           </div>
           <ul className="list-group">
-            {scheduleMap[key].map(item => (
+            {scheduleMap[key].map((item) => (
               <li key={item} className="list-group-item">
                 {item}
               </li>
