@@ -1,18 +1,21 @@
 // @flow
-import { inject } from 'mobx-react';
+import { useAtom } from 'jotai';
 import Next from '../components/Next';
-import type { Stores } from '../stores';
+import { nextTimeAtom } from '../stores';
 
-export default inject(({ timeTableStore }: Stores) => {
-  if (timeTableStore.nextHour !== -1) {
-    return {
-      exist: true,
-      hours: timeTableStore.nextHour,
-      minutes: timeTableStore.nextMinute,
-      seconds: timeTableStore.nextSecond,
-    };
+const NextContainer = () => {
+  const [nextTime] = useAtom(nextTimeAtom);
+  if (nextTime.hour !== -1) {
+    return (
+      <Next
+        exist={true}
+        hours={nextTime.hour}
+        minutes={nextTime.minute}
+        seconds={nextTime.second}
+      />
+    );
   }
-  return {
-    exist: false,
-  };
-})(Next);
+  return <Next exist={false} />;
+};
+
+export default NextContainer;

@@ -1,8 +1,11 @@
 // @flow
-import { inject } from 'mobx-react';
+import { useAtom } from 'jotai';
 import List from '../components/List';
-import type { Stores } from '../stores';
+import { timeTableMapAtom } from '../stores';
 
-export default inject(({ timeTableStore }: Stores) => ({
-  scheduleMap: timeTableStore.timeTableMap,
-}))(List);
+const ListContainer = () => {
+  const [scheduleMap] = useAtom(timeTableMapAtom);
+  return <List scheduleMap={scheduleMap} />;
+};
+
+export default ListContainer;
