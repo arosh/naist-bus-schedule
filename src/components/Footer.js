@@ -34,14 +34,16 @@ export default () => (
       </a>
     </p>
     <p>
-      If you find anything different in this timetable from the official one, please{' '}
+      If you find anything different in this timetable from the official one,
+      please{' '}
       <a
         href="https://github.com/arosh/naist-bus-schedule/issues"
         target="_blank"
         rel="noopener noreferrer"
       >
         submit an issue
-      </a>.
+      </a>
+      .
     </p>
   </div>
 );

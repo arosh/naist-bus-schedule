@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "airbnb",
+    "react-app",
     "plugin:flowtype/recommended",
     "plugin:prettier/recommended"
   ],
