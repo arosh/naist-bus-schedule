@@ -17,4 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-serviceWorker.register();
+serviceWorker.unregister();
