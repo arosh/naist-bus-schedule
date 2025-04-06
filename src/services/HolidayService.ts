@@ -1,6 +1,3 @@
-// @flow
-
-// 他には https://github.com/hitsujiwool/node-holiday-jp などが有望？
 import * as Holiday from '@holiday-jp/holiday_jp';
 
 export default class HolidayService {
@@ -10,10 +7,12 @@ export default class HolidayService {
   getToday(): Date {
     return new Date();
   }
+  
   checkIfTodayIsHoliday(): boolean {
     const today = this.getToday();
     return Holiday.isHoliday(today);
   }
+  
   checkIfTodayIsWeekend(): boolean {
     const today = this.getToday();
     const day = today.getDay();

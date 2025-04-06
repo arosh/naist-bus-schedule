@@ -1,13 +1,12 @@
-// @flow
 import * as React from 'react';
 
-const pad = (value: number) => value.toString().padStart(2, '0');
+const pad = (value: number): string => value.toString().padStart(2, '0');
 
 type Props = {
-  exist: boolean,
-  hours?: number,
-  minutes?: number,
-  seconds?: number,
+  exist: boolean;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
 };
 
 const Next = ({ exist, hours = 0, minutes = 0, seconds = 0 }: Props) => {

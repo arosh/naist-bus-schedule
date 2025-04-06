@@ -1,4 +1,3 @@
-// @flow
 export default class SplitScheduleService {
   split(schedule: string[]): { [hour: string]: string[] } {
     const map: { [hour: string]: string[] } = {};

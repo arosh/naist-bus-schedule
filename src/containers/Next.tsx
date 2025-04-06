@@ -1,4 +1,3 @@
-// @flow
 import { useAtom } from 'jotai';
 import Next from '../components/Next';
 import { nextTimeAtom } from '../stores';

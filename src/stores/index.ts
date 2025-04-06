@@ -44,6 +44,19 @@ export const busStopAtom = atomWithStorage('busStop', BUS_STOP.KITAIKOMA);
 // スケジュールタイプは日付によって変わるので通常のatomを使用
 export const scheduleTypeAtom = atom(getInitialScheduleType());
 
+// TypeScriptのための型
+type TimeData = {
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
+
+type NextTimeResult = {
+  hour: number;
+  minute: number;
+  second: number;
+};
+
 // 時刻表データを取得するatom
 export const timeTableAtom = atom(async (get) => {
   const direction = get(directionAtom);
@@ -58,7 +71,7 @@ export const timeTableAtom = atom(async (get) => {
 });
 
 // 現在時刻を管理するatom
-export const nowAtom = atomWithRefresh((get) => {
+export const nowAtom = atomWithRefresh<TimeData>((get) => {
   const date = new Date();
   return {
     hours: date.getHours(),
@@ -76,7 +89,7 @@ nowAtom.onMount = (setAtom) => {
 };
 
 // 次のバスの時刻を計算するatom
-export const nextTimeAtom = atom(async (get) => {
+export const nextTimeAtom = atom<Promise<NextTimeResult>>(async (get) => {
   const { hours, minutes, seconds } = get(nowAtom);
   const timeTable = await get(timeTableAtom);
 
@@ -84,7 +97,7 @@ export const nextTimeAtom = atom(async (get) => {
 });
 
 // 時刻表をマップに変換するatom
-export const timeTableMapAtom = atom(async (get) => {
+export const timeTableMapAtom = atom<Promise<{ [key: string]: string[] }>>(async (get) => {
   const timeTable = await get(timeTableAtom);
   return splitScheduleService.split(timeTable);
 });

@@ -1,13 +1,12 @@
-// @flow
 import * as React from 'react';
 
 type Props = {
-  direction: string,
-  busStop: string,
-  scheduleType: string,
-  onDirectionChange: (string) => void,
-  onBusStopChange: (string) => void,
-  onScheduleTypeChange: (string) => void,
+  direction: string;
+  busStop: string;
+  scheduleType: string;
+  onDirectionChange: (value: string) => void;
+  onBusStopChange: (value: string) => void;
+  onScheduleTypeChange: (value: string) => void;
 };
 
 export default ({

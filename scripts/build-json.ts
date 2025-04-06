@@ -1,8 +1,6 @@
-// @flow
-
 // fsをPromise化したもの
-const fs = require('mz/fs');
-const path = require('path');
+import * as fs from 'mz/fs';
+import * as path from 'path';
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -26,14 +24,17 @@ const resourceNames = [
 ];
 
 function parseCsv(content: string): string[] {
-  const retval = [];
+  const retval: string[] = [];
   const lines = content.split('\n');
   // 時刻表は5時から24時まであるので24-5+1行ある
   for (let i = 0; i < 24 - 5 + 1; i++) {
+    // @ts-ignore
     const row = lines[i].split(',');
     // 0列目は時, 1列目以降は分
+    // @ts-ignore
     const prefix = row[0].trim().padStart(2, '0');
     for (let j = 1; j < row.length; j++) {
+      // @ts-ignore
       const items = row[j].trim().split(/\s/);
       // prettier-ignore
       for (const item of items) {
@@ -48,8 +49,8 @@ function parseCsv(content: string): string[] {
   return retval;
 }
 
-async function run() {
-  const store = {};
+async function run(): Promise<void> {
+  const store: { [key: string]: string[] } = {};
   // prettier-ignore
   for (const resourceName of resourceNames) {
     const filename = path.join(ROOT, 'resources', `${resourceName}.csv`);

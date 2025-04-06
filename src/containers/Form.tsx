@@ -1,4 +1,3 @@
-// @flow
 import { useAtom } from 'jotai';
 import Form from '../components/Form';
 import { directionAtom, busStopAtom, scheduleTypeAtom } from '../stores';
@@ -9,19 +8,19 @@ const FormContainer = () => {
   const [busStop, setBusStop] = useAtom(busStopAtom);
   const [scheduleType, setScheduleType] = useAtom(scheduleTypeAtom);
 
-  const handleDirectionChange = (newDirection) => {
+  const handleDirectionChange = (newDirection: string) => {
     startTransition(() => {
       setDirection(newDirection);
     });
   };
 
-  const handleBusStopChange = (newBusStop) => {
+  const handleBusStopChange = (newBusStop: string) => {
     startTransition(() => {
       setBusStop(newBusStop);
     });
   };
 
-  const handleScheduleTypeChange = (newScheduleType) => {
+  const handleScheduleTypeChange = (newScheduleType: string) => {
     startTransition(() => {
       setScheduleType(newScheduleType);
     });

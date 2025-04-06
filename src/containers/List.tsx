@@ -1,4 +1,3 @@
-// @flow
 import { useAtom } from 'jotai';
 import List from '../components/List';
 import { timeTableMapAtom } from '../stores';

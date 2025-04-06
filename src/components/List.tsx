@@ -1,8 +1,7 @@
-// @flow
 import * as React from 'react';
 
 type Props = {
-  scheduleMap: { [string]: string[] },
+  scheduleMap: { [key: string]: string[] };
 };
 
 export default ({ scheduleMap }: Props) => {
