@@ -2,8 +2,8 @@
 import React from 'react';
 
 export default () => (
-  <div className="text-center">
-    <p>Last modified: 2025-02-22</p>
+  <div className="text-center text-gray-600 text-sm">
+    <p className="mb-2">Last modified: 2025-02-22</p>
     <p>
       Icons made by{' '}
       <a
@@ -11,6 +11,7 @@ export default () => (
         title="Freepik"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
       >
         Freepik
       </a>{' '}
@@ -20,6 +21,7 @@ export default () => (
         title="Flaticon"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
       >
         www.flaticon.com
       </a>{' '}
@@ -29,9 +31,11 @@ export default () => (
         title="Creative Commons BY 3.0"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
       >
         CC 3.0 BY
       </a>
+      .
     </p>
     <p>
       If you find anything different in this timetable from the official one,
@@ -40,6 +44,7 @@ export default () => (
         href="https://github.com/arosh/naist-bus-schedule/issues"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-blue-600 hover:underline"
       >
         submit an issue
       </a>

@@ -32,8 +32,9 @@ const splitScheduleService = new SplitScheduleService();
 const timeDiffService = new TimeDiffService();
 
 // 初期値の計算
-const getInitialScheduleType = () => 
-  holidayService.checkIfTodayIsHoliday() || holidayService.checkIfTodayIsWeekend()
+const getInitialScheduleType = () =>
+  holidayService.checkIfTodayIsHoliday() ||
+  holidayService.checkIfTodayIsWeekend()
     ? SCHEDULE.WEEKEND
     : SCHEDULE.WEEKDAY;
 
@@ -48,11 +49,11 @@ export const timeTableAtom = atom(async (get) => {
   const direction = get(directionAtom);
   const busStop = get(busStopAtom);
   const scheduleType = get(scheduleTypeAtom);
-  
+
   // 方向の正規化
   const canonicalDirection = direction === DIRECTION.FROM_NAIST ? 'to' : 'from';
   const query = `${canonicalDirection}-${busStop}-${scheduleType}`;
-  
+
   return await busScheduleService.fetch(query);
 });
 
@@ -78,7 +79,7 @@ nowAtom.onMount = (setAtom) => {
 export const nextTimeAtom = atom(async (get) => {
   const { hours, minutes, seconds } = get(nowAtom);
   const timeTable = await get(timeTableAtom);
-  
+
   return timeDiffService.getNext(hours, minutes, seconds, timeTable);
 });
 

@@ -18,16 +18,19 @@ export default ({
   onBusStopChange,
   onScheduleTypeChange,
 }: Props) => (
-  <form className="form-horizontal">
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="direction">
+  <form className="w-full">
+    <div className="mb-4">
+      <label
+        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        htmlFor="direction"
+      >
         <i className="fas fa-exchange-alt" aria-hidden="true" /> Direction
       </label>
-      <div className="col-sm-10 col-md-9">
+      <div className="sm:w-2/3 sm:inline-block">
         <select
           id="direction"
           name="direction"
-          className="form-control"
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           value={direction}
           onChange={(e) => {
             onDirectionChange(e.target.value);
@@ -38,14 +41,17 @@ export default ({
         </select>
       </div>
     </div>
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="busStop">
+    <div className="mb-4">
+      <label
+        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        htmlFor="busStop"
+      >
         <i className="fas fa-bus" aria-hidden="true" /> Bus Stop
       </label>
-      <div className="col-sm-10 col-md-9">
+      <div className="sm:w-2/3 sm:inline-block">
         <select
           id="busStop"
-          className="form-control"
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           value={busStop}
           onChange={(e) => {
             onBusStopChange(e.target.value);
@@ -60,15 +66,18 @@ export default ({
         </select>
       </div>
     </div>
-    <div className="form-group">
-      <label className="col-sm-2 col-md-3 control-label" htmlFor="scheduleType">
+    <div className="mb-4">
+      <label
+        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        htmlFor="scheduleType"
+      >
         <i className="far fa-calendar-alt" aria-hidden="true" /> Timetable
       </label>
-      <div className="col-sm-10 col-md-9">
+      <div className="sm:w-2/3 sm:inline-block">
         <select
           id="scheduleType"
           value={scheduleType}
-          className="form-control"
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           onChange={(e) => {
             onScheduleTypeChange(e.target.value);
           }}

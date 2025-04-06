@@ -5,25 +5,15 @@ import Form from './Form';
 import List from './List';
 import Next from './Next';
 
-const styles = {
-  footer: {
-    margin: '28px 0 40px',
-  },
-};
-
 export default () => (
-  <div className="container">
-    <div className="row">
-      <div className="col-md-offset-2 col-md-8">
-        <h1 className="text-center">{document.title}</h1>
-        <Share />
-        <Form />
-        <Next />
-        <List />
-        <div style={styles.footer}>
-          <Footer />
-        </div>
-      </div>
+  <div className="max-w-xl mx-auto px-4 text-gray-700">
+    <h1 className="text-center text-2xl mt-4 mb-2">{document.title}</h1>
+    <Share />
+    <Form />
+    <Next />
+    <List />
+    <div className="mt-4 mb-6">
+      <Footer />
     </div>
   </div>
 );

@@ -1,34 +1,40 @@
 // @flow
 import * as React from 'react';
 
-const styles = {
-  panel: {
-    borderColor: '#424242',
-  },
-  center: {
-    fontSize: '48px',
-  },
-};
-
 const pad = (value: number) => value.toString().padStart(2, '0');
 
 type Props = {
   exist: boolean,
-  hours: number,
-  minutes: number,
-  seconds: number,
+  hours?: number,
+  minutes?: number,
+  seconds?: number,
 };
 
-export default ({ exist, hours, minutes, seconds }: Props) =>
-  exist && (
-    <React.Fragment>
-      <h2>次発バスまでの時間</h2>
-      <div className="panel" style={styles.panel}>
-        <div className="panel-body">
-          <div className="text-center" style={styles.center}>
-            {`${pad(hours)}：${pad(minutes)}：${pad(seconds)}`}
+const Next = ({ exist, hours = 0, minutes = 0, seconds = 0 }: Props) => {
+  if (!exist) return null;
+
+  return (
+    <div className="mb-6">
+      <h2 className="text-xl font-bold mb-2">次発バスまでの時間</h2>
+      <div className="rounded-lg border border-gray-300 overflow-hidden">
+        <div className="p-4">
+          <div className="flex justify-center items-center text-4xl font-mono font-bold">
+            <div className="bg-gray-100 rounded-lg p-3 shadow-inner">
+              {pad(hours)}
+            </div>
+            <span className="mx-2">:</span>
+            <div className="bg-gray-100 rounded-lg p-3 shadow-inner">
+              {pad(minutes)}
+            </div>
+            <span className="mx-2">:</span>
+            <div className="bg-gray-100 rounded-lg p-3 shadow-inner">
+              {pad(seconds)}
+            </div>
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
+};
+
+export default Next;
