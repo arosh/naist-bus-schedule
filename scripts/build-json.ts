@@ -28,13 +28,10 @@ function parseCsv(content: string): string[] {
   const lines = content.split('\n');
   // 時刻表は5時から24時まであるので24-5+1行ある
   for (let i = 0; i < 24 - 5 + 1; i++) {
-    // @ts-ignore
     const row = lines[i].split(',');
     // 0列目は時, 1列目以降は分
-    // @ts-ignore
     const prefix = row[0].trim().padStart(2, '0');
     for (let j = 1; j < row.length; j++) {
-      // @ts-ignore
       const items = row[j].trim().split(/\s/);
       // prettier-ignore
       for (const item of items) {

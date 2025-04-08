@@ -71,7 +71,7 @@ export const timeTableAtom = atom(async (get) => {
 });
 
 // 現在時刻を管理するatom
-export const nowAtom = atomWithRefresh<TimeData>((get) => {
+export const nowAtom = atomWithRefresh<TimeData>((_get) => {
   const date = new Date();
   return {
     hours: date.getHours(),
