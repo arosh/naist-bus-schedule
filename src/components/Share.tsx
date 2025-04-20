@@ -1,4 +1,3 @@
-import * as React from 'react';
 import twitterLogo from '../assets/brands/Twitter_Social_Icon_Square_Color.svg';
 import facebookLogo from '../assets/brands/FB-f-Logo__blue_100.png';
 import lineLogo from '../assets/brands/LINE_SOCIAL_Square_typeA.png';

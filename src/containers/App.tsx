@@ -1,4 +1,3 @@
-import React from 'react';
 import Footer from '../components/Footer';
 import Share from '../components/Share';
 import Form from './Form';

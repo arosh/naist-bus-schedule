@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 // https://stackoverflow.com/questions/8059184/make-an-arrow-using-css
 const styles = {
   arrow: {

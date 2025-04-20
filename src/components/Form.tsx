@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 type Props = {
   direction: string;
   busStop: string;

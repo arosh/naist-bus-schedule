@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default () => (
   <div className="text-center text-gray-600 text-sm">
     <p className="mb-2">Last modified: 2025-02-22</p>

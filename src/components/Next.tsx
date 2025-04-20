@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 const pad = (value: number): string => value.toString().padStart(2, '0');
 
 type Props = {
