@@ -1,4 +1,5 @@
-export default () => (
+function Footer() {
+  return (
   <div className="text-center text-gray-600 text-sm">
     <p className="mb-2">Last modified: 2025-02-22</p>
     <p>
@@ -48,4 +49,7 @@ export default () => (
       .
     </p>
   </div>
-);
+  );
+}
+
+export default Footer;

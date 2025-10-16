@@ -11,4 +11,8 @@ const styles = {
   },
 };
 
-export default () => <div style={styles.arrow} />;
+function Arrow() {
+  return <div style={styles.arrow} />;
+}
+
+export default Arrow;

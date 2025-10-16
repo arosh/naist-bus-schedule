@@ -8,7 +8,8 @@ const twitterURL = `http://twitter.com/intent/tweet?url=${publicURL}&text=${docu
 const facebookURL = `http://www.facebook.com/sharer.php?u=${publicURL}`;
 const lineURL = `http://line.me/R/msg/text/?${publicURL}`;
 
-export default () => (
+function Share() {
+  return (
   <div className="mb-4">
     <div className="flex flex-row justify-end gap-2">
       <a href={twitterURL} target="_blank" rel="noreferrer noopener">
@@ -26,4 +27,7 @@ export default () => (
       </a>
     </div>
   </div>
-);
+  );
+}
+
+export default Share;

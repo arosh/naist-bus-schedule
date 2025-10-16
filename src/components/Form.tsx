@@ -7,14 +7,15 @@ type Props = {
   onScheduleTypeChange: (value: string) => void;
 };
 
-export default ({
+function Form({
   direction,
   busStop,
   scheduleType,
   onDirectionChange,
   onBusStopChange,
   onScheduleTypeChange,
-}: Props) => (
+}: Props) {
+  return (
   <form className="w-full">
     <div className="mb-4">
       <label
@@ -85,4 +86,7 @@ export default ({
       </div>
     </div>
   </form>
-);
+  );
+}
+
+export default Form;

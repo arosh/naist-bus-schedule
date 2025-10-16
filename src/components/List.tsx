@@ -2,7 +2,7 @@ type Props = {
   scheduleMap: { [key: string]: string[] };
 };
 
-export default ({ scheduleMap }: Props) => {
+function List({ scheduleMap }: Props) {
   const keys = Object.keys(scheduleMap);
   keys.sort();
   return (
@@ -36,4 +36,6 @@ export default ({ scheduleMap }: Props) => {
       </div>
     </div>
   );
-};
+}
+
+export default List;
