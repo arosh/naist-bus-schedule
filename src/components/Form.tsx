@@ -18,7 +18,7 @@ export default ({
   <form className="w-full">
     <div className="mb-4">
       <label
-        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        className="block font-bold mb-1 sm:mb-0 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
         htmlFor="direction"
       >
         <i className="fas fa-exchange-alt" aria-hidden="true" /> Direction
@@ -40,7 +40,7 @@ export default ({
     </div>
     <div className="mb-4">
       <label
-        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        className="block font-bold mb-1 sm:mb-0 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
         htmlFor="busStop"
       >
         <i className="fas fa-bus" aria-hidden="true" /> Bus Stop
@@ -65,7 +65,7 @@ export default ({
     </div>
     <div className="mb-4">
       <label
-        className="block font-bold mb-2 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
+        className="block font-bold mb-1 sm:mb-0 sm:w-1/3 sm:inline-block sm:text-right sm:pr-4"
         htmlFor="scheduleType"
       >
         <i className="far fa-calendar-alt" aria-hidden="true" /> Timetable

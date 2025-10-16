@@ -20,7 +20,7 @@ export default ({ scheduleMap }: Props) => {
               {key}
             </div>
             <div className="p-3">
-              <ul className="flex flex-wrap gap-2 list-none">
+              <ul className="flex flex-wrap gap-3 list-none">
                 {scheduleMap[key].map((item) => (
                   <li
                     key={item}

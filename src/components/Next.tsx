@@ -16,11 +16,11 @@ const Next = ({ exist, hours = 0, minutes = 0, seconds = 0 }: Props) => {
       <div className="rounded-lg border border-gray-300 overflow-hidden">
         <div className="p-4">
           <div className="flex justify-center items-center text-4xl font-mono font-bold">
-            <div className="bg-gray-100 rounded-lg p-3 shadow-inner">
+            <div className="bg-gray-100 rounded-lg p-3 inset-shadow">
               {pad(hours)}
             </div>
             <span className="mx-2">:</span>
-            <div className="bg-gray-100 rounded-lg p-3 shadow-inner">
+            <div className="bg-gray-100 rounded-lg p-3 inset-shadow-sm">
               {pad(minutes)}
             </div>
             <span className="mx-2">:</span>
