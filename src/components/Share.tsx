@@ -1,14 +1,32 @@
+import { useMemo } from 'react';
 import twitterLogo from '../assets/brands/Twitter_Social_Icon_Square_Color.svg';
 import facebookLogo from '../assets/brands/FB-f-Logo__blue_100.png';
 import lineLogo from '../assets/brands/LINE_SOCIAL_Square_typeA.png';
 
-const publicURL = encodeURIComponent(window.location.href);
-// prettier-ignore
-const twitterURL = `http://twitter.com/intent/tweet?url=${publicURL}&text=${document.title}`;
-const facebookURL = `http://www.facebook.com/sharer.php?u=${publicURL}`;
-const lineURL = `http://line.me/R/msg/text/?${publicURL}`;
-
 function Share() {
+  const { twitterURL, facebookURL, lineURL } = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return {
+        twitterURL: '',
+        facebookURL: '',
+        lineURL: '',
+      };
+    }
+
+    const href = window.location.href;
+    const encodedUrl = encodeURIComponent(href);
+    const title =
+      typeof document !== 'undefined' && document.title
+        ? encodeURIComponent(document.title)
+        : '';
+
+    return {
+      twitterURL: `http://twitter.com/intent/tweet?url=${encodedUrl}&text=${title}`,
+      facebookURL: `http://www.facebook.com/sharer.php?u=${encodedUrl}`,
+      lineURL: `http://line.me/R/msg/text/?${encodedUrl}`,
+    };
+  }, []);
+
   return (
   <div className="mb-4">
     <div className="flex flex-row justify-end gap-2">
