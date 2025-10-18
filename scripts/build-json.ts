@@ -1,7 +1,9 @@
-// fsをPromise化したもの
-import * as fs from 'mz/fs';
+// Node.js built-in promise-based filesystem helpers
+import { readFile, writeFile } from 'node:fs/promises';
 import * as path from 'path';
 
+// Recreate __dirname since this script runs as an ES module under tsx
+const __dirname = import.meta.dirname;
 const ROOT = path.resolve(__dirname, '..');
 
 const resourceNames = [
@@ -51,12 +53,12 @@ async function run(): Promise<void> {
   // prettier-ignore
   for (const resourceName of resourceNames) {
     const filename = path.join(ROOT, 'resources', `${resourceName}.csv`);
-    const data = await fs.readFile(filename);
+  const data = await readFile(filename);
     const content = data.toString();
     store[resourceName] = parseCsv(content);
   }
   const targetFilename = path.join(ROOT, 'src', 'resources', 'data.json');
-  await fs.writeFile(targetFilename, JSON.stringify(store));
+  await writeFile(targetFilename, JSON.stringify(store));
 }
 
 run();
