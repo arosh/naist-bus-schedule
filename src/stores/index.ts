@@ -2,7 +2,9 @@ import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { atomWithRefresh } from 'jotai/utils';
 
-import BusScheduleService from '../services/BusScheduleService';
+import BusScheduleService, {
+  type ScheduleKey,
+} from '../services/BusScheduleService';
 import SplitScheduleService from '../services/SplitScheduleService';
 import TimeDiffService from '../services/TimeDiffService';
 import HolidayService from '../services/HolidayService';
@@ -11,19 +13,23 @@ import HolidayService from '../services/HolidayService';
 export const DIRECTION = Object.freeze({
   TO_NAIST: 'to',
   FROM_NAIST: 'from',
-});
+} as const);
 
 export const BUS_STOP = Object.freeze({
   KITAIKOMA: 'kitaikoma',
   GAKUEMMAE: 'gakuemmae',
   TAKANOHARA: 'takanohara',
   TOMIGAOKA: 'tomigaoka',
-});
+} as const);
 
 export const SCHEDULE = Object.freeze({
   WEEKDAY: 'weekday',
   WEEKEND: 'weekend',
-});
+} as const);
+
+export type DirectionValue = (typeof DIRECTION)[keyof typeof DIRECTION];
+export type BusStopValue = (typeof BUS_STOP)[keyof typeof BUS_STOP];
+export type ScheduleTypeValue = (typeof SCHEDULE)[keyof typeof SCHEDULE];
 
 // サービスのシングルトンインスタンスを作成
 const holidayService = new HolidayService();
@@ -39,10 +45,16 @@ const getInitialScheduleType = () =>
     : SCHEDULE.WEEKDAY;
 
 // ローカルストレージに保存するatomを使用（ユーザー設定を保持）
-export const directionAtom = atomWithStorage('direction', DIRECTION.FROM_NAIST);
-export const busStopAtom = atomWithStorage('busStop', BUS_STOP.KITAIKOMA);
+export const directionAtom = atomWithStorage<DirectionValue>(
+  'direction',
+  DIRECTION.FROM_NAIST
+);
+export const busStopAtom = atomWithStorage<BusStopValue>(
+  'busStop',
+  BUS_STOP.KITAIKOMA
+);
 // スケジュールタイプは日付によって変わるので通常のatomを使用
-export const scheduleTypeAtom = atom(getInitialScheduleType());
+export const scheduleTypeAtom = atom<ScheduleTypeValue>(getInitialScheduleType());
 
 // TypeScriptのための型
 type TimeData = {
@@ -67,7 +79,7 @@ export const timeTableAtom = atom(async (get) => {
   const canonicalDirection = direction === DIRECTION.FROM_NAIST ? 'to' : 'from';
   const query = `${canonicalDirection}-${busStop}-${scheduleType}`;
 
-  return await busScheduleService.fetch(query);
+  return await busScheduleService.fetch(query as ScheduleKey);
 });
 
 // 現在時刻を管理するatom

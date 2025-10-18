@@ -1,10 +1,16 @@
+import type {
+  DirectionValue,
+  BusStopValue,
+  ScheduleTypeValue,
+} from '../stores';
+
 type Props = {
-  direction: string;
-  busStop: string;
-  scheduleType: string;
-  onDirectionChange: (value: string) => void;
-  onBusStopChange: (value: string) => void;
-  onScheduleTypeChange: (value: string) => void;
+  direction: DirectionValue;
+  busStop: BusStopValue;
+  scheduleType: ScheduleTypeValue;
+  onDirectionChange: (value: DirectionValue) => void;
+  onBusStopChange: (value: BusStopValue) => void;
+  onScheduleTypeChange: (value: ScheduleTypeValue) => void;
 };
 
 function Form({
@@ -31,7 +37,7 @@ function Form({
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           value={direction}
           onChange={(e) => {
-            onDirectionChange(e.target.value);
+            onDirectionChange(e.target.value as DirectionValue);
           }}
         >
           <option value="to">NAIST行き / To NAIST</option>
@@ -52,7 +58,7 @@ function Form({
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           value={busStop}
           onChange={(e) => {
-            onBusStopChange(e.target.value);
+            onBusStopChange(e.target.value as BusStopValue);
           }}
         >
           <option value="kitaikoma">
@@ -77,7 +83,7 @@ function Form({
           value={scheduleType}
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-500"
           onChange={(e) => {
-            onScheduleTypeChange(e.target.value);
+            onScheduleTypeChange(e.target.value as ScheduleTypeValue);
           }}
         >
           <option value="weekday">平日ダイヤ / weekday</option>
