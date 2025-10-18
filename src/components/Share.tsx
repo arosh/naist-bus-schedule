@@ -21,9 +21,9 @@ function Share() {
         : '';
 
     return {
-      twitterURL: `http://twitter.com/intent/tweet?url=${encodedUrl}&text=${title}`,
-      facebookURL: `http://www.facebook.com/sharer.php?u=${encodedUrl}`,
-      lineURL: `http://line.me/R/msg/text/?${encodedUrl}`,
+      twitterURL: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${title}`,
+      facebookURL: `https://www.facebook.com/sharer.php?u=${encodedUrl}`,
+      lineURL: `https://line.me/R/msg/text/?${encodedUrl}`,
     };
   }, []);
 
