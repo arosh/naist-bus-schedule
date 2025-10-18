@@ -20,6 +20,10 @@ Well... Nara Kotsu's latest system provides timetable data in PDF format, wherea
 
 No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.json` in the PR, but it is no longer needed. GitHub Actions now automatically generate it.
 
+### Can I run the end-to-end tests locally?
+
+Yes. First install browser binaries with `npx playwright install`, then launch the suite with `npm run e2e`. The command spins up the Vite dev server on port 3000 automatically and runs the Playwright checks headlessly.
+
 ## Contributors
 
 * [@speedcell4](https://github.com/speedcell4) added timetables between Tomigaoka station and NAIST.
