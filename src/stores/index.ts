@@ -1,6 +1,5 @@
 import { atom } from 'jotai';
-import { atomWithStorage } from 'jotai/utils';
-import { atomWithRefresh } from 'jotai/utils';
+import { atomWithRefresh, atomWithStorage, createJSONStorage } from 'jotai/utils';
 
 import BusScheduleService, {
   type ScheduleKey,
@@ -44,14 +43,70 @@ const getInitialScheduleType = () =>
     ? SCHEDULE.WEEKEND
     : SCHEDULE.WEEKDAY;
 
-// ローカルストレージに保存するatomを使用（ユーザー設定を保持）
-export const directionAtom = atomWithStorage<DirectionValue>(
+const DIRECTION_VALUES = Object.values(DIRECTION) as DirectionValue[];
+const BUS_STOP_VALUES = Object.values(BUS_STOP) as BusStopValue[];
+
+const createValidatedStringStorageAtom = <T extends string>(
+  key: string,
+  defaultValue: T,
+  allowedValues: readonly T[]
+) => {
+  const storage =
+    typeof window !== 'undefined'
+      ? createJSONStorage<T>(() => window.localStorage)
+      : undefined;
+
+  const sanitizedStorage =
+    storage && {
+      ...storage,
+      getItem: (storageKey: string, initialValue: T) => {
+        const storedValue = storage.getItem(storageKey, initialValue);
+        if (allowedValues.includes(storedValue)) {
+          return storedValue;
+        }
+        try {
+          storage.setItem(storageKey, defaultValue);
+        } catch {
+          // Ignore storage write failures (e.g., read-only or quota exceeded)
+        }
+        return defaultValue;
+      },
+    };
+
+  return atomWithStorage<T>(key, defaultValue, sanitizedStorage);
+};
+
+const directionStorageAtom = createValidatedStringStorageAtom<DirectionValue>(
   'direction',
-  DIRECTION.FROM_NAIST
+  DIRECTION.FROM_NAIST,
+  DIRECTION_VALUES
 );
-export const busStopAtom = atomWithStorage<BusStopValue>(
+
+const busStopStorageAtom = createValidatedStringStorageAtom<BusStopValue>(
   'busStop',
-  BUS_STOP.KITAIKOMA
+  BUS_STOP.KITAIKOMA,
+  BUS_STOP_VALUES
+);
+
+// ローカルストレージに保存するatomを使用（ユーザー設定を保持）
+export const directionAtom = atom<DirectionValue, [DirectionValue], void>(
+  (get) => get(directionStorageAtom),
+  (_get, set, nextDirection) => {
+    const safeDirection = DIRECTION_VALUES.includes(nextDirection)
+      ? nextDirection
+      : DIRECTION.FROM_NAIST;
+    set(directionStorageAtom, safeDirection);
+  }
+);
+
+export const busStopAtom = atom<BusStopValue, [BusStopValue], void>(
+  (get) => get(busStopStorageAtom),
+  (_get, set, nextBusStop) => {
+    const safeBusStop = BUS_STOP_VALUES.includes(nextBusStop)
+      ? nextBusStop
+      : BUS_STOP.KITAIKOMA;
+    set(busStopStorageAtom, safeBusStop);
+  }
 );
 // スケジュールタイプは日付によって変わるので通常のatomを使用
 export const scheduleTypeAtom = atom<ScheduleTypeValue>(getInitialScheduleType());
@@ -69,17 +124,23 @@ type NextTimeResult = {
   second: number;
 };
 
-// 時刻表データを取得するatom
-export const timeTableAtom = atom(async (get) => {
+// 時刻表参照用のキーを算出するatom
+const scheduleKeyAtom = atom<ScheduleKey>((get) => {
   const direction = get(directionAtom);
   const busStop = get(busStopAtom);
   const scheduleType = get(scheduleTypeAtom);
 
-  // 方向の正規化
-  const canonicalDirection = direction === DIRECTION.FROM_NAIST ? 'to' : 'from';
-  const query = `${canonicalDirection}-${busStop}-${scheduleType}`;
+  // UI上の「from NAIST」は時刻表データの "to" を参照する
+  const canonicalDirection =
+    direction === DIRECTION.FROM_NAIST ? DIRECTION.TO_NAIST : DIRECTION.FROM_NAIST;
 
-  return await busScheduleService.fetch(query as ScheduleKey);
+  return `${canonicalDirection}-${busStop}-${scheduleType}` as ScheduleKey;
+});
+
+// 時刻表データを取得するatom
+export const timeTableAtom = atom((get) => {
+  const key = get(scheduleKeyAtom);
+  return busScheduleService.fetch(key);
 });
 
 // 現在時刻を管理するatom
@@ -101,15 +162,14 @@ nowAtom.onMount = (setAtom) => {
 };
 
 // 次のバスの時刻を計算するatom
-export const nextTimeAtom = atom<Promise<NextTimeResult>>(async (get) => {
+export const nextTimeAtom = atom<NextTimeResult>((get) => {
   const { hours, minutes, seconds } = get(nowAtom);
-  const timeTable = await get(timeTableAtom);
-
+  const timeTable = get(timeTableAtom);
   return timeDiffService.getNext(hours, minutes, seconds, timeTable);
 });
 
 // 時刻表をマップに変換するatom
-export const timeTableMapAtom = atom<Promise<{ [key: string]: string[] }>>(async (get) => {
-  const timeTable = await get(timeTableAtom);
+export const timeTableMapAtom = atom<{ [key: string]: string[] }>((get) => {
+  const timeTable = get(timeTableAtom);
   return splitScheduleService.split(timeTable);
 });
