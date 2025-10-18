@@ -7,24 +7,24 @@ function List({ scheduleMap }: Props) {
   keys.sort();
   return (
     <div className="time-table-js">
-      <h2 className="text-xl font-bold mb-2">
+      <h2 className="mb-2 text-xl font-bold">
         <i className="far fa-clock" aria-hidden="true" /> 時刻表
       </h2>
       <div className="space-y-3">
         {keys.map((key) => (
           <div
             key={key}
-            className="border border-gray-300 rounded overflow-hidden"
+            className="overflow-hidden rounded border border-gray-300"
           >
-            <div className="bg-gray-800 text-gray-100 text-sm px-3 py-1 font-medium">
+            <div className="bg-gray-800 px-3 py-1 text-sm font-medium text-gray-100">
               {key}
             </div>
             <div className="p-3">
-              <ul className="flex flex-wrap gap-3 list-none">
+              <ul className="flex list-none flex-wrap gap-3">
                 {scheduleMap[key].map((item) => (
                   <li
                     key={item}
-                    className="inline-block bg-white px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors shadow font-medium"
+                    className="inline-block rounded-full border border-gray-300 bg-white px-3 py-1 font-medium shadow transition-colors hover:bg-gray-100"
                   >
                     {item}
                   </li>

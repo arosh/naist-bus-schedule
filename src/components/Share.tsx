@@ -28,23 +28,23 @@ function Share() {
   }, []);
 
   return (
-  <div className="mb-4">
-    <div className="flex flex-row justify-end gap-2">
-      <a href={twitterURL} target="_blank" rel="noreferrer noopener">
-        <img src={twitterLogo} alt="Twitter logo" className="w-10 h-10" />
-      </a>
-      <a href={facebookURL} target="_blank" rel="noreferrer noopener">
-        <img
-          src={facebookLogo}
-          alt="Facebook logo"
-          className="w-10 h-10 bg-[#3b5998]"
-        />
-      </a>
-      <a href={lineURL} target="_blank" rel="noreferrer noopener">
-        <img src={lineLogo} alt="LINE logo" className="w-10 h-10" />
-      </a>
+    <div className="mb-4">
+      <div className="flex flex-row justify-end gap-2">
+        <a href={twitterURL} target="_blank" rel="noreferrer noopener">
+          <img src={twitterLogo} alt="Twitter logo" className="h-10 w-10" />
+        </a>
+        <a href={facebookURL} target="_blank" rel="noreferrer noopener">
+          <img
+            src={facebookLogo}
+            alt="Facebook logo"
+            className="h-10 w-10 bg-[#3b5998]"
+          />
+        </a>
+        <a href={lineURL} target="_blank" rel="noreferrer noopener">
+          <img src={lineLogo} alt="LINE logo" className="h-10 w-10" />
+        </a>
+      </div>
     </div>
-  </div>
   );
 }
 

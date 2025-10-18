@@ -1,5 +1,9 @@
 import { atom } from 'jotai';
-import { atomWithRefresh, atomWithStorage, createJSONStorage } from 'jotai/utils';
+import {
+  atomWithRefresh,
+  atomWithStorage,
+  createJSONStorage,
+} from 'jotai/utils';
 
 import BusScheduleService, {
   type ScheduleKey,
@@ -56,22 +60,21 @@ const createValidatedStringStorageAtom = <T extends string>(
       ? createJSONStorage<T>(() => window.localStorage)
       : undefined;
 
-  const sanitizedStorage =
-    storage && {
-      ...storage,
-      getItem: (storageKey: string, initialValue: T) => {
-        const storedValue = storage.getItem(storageKey, initialValue);
-        if (allowedValues.includes(storedValue)) {
-          return storedValue;
-        }
-        try {
-          storage.setItem(storageKey, defaultValue);
-        } catch {
-          // Ignore storage write failures (e.g., read-only or quota exceeded)
-        }
-        return defaultValue;
-      },
-    };
+  const sanitizedStorage = storage && {
+    ...storage,
+    getItem: (storageKey: string, initialValue: T) => {
+      const storedValue = storage.getItem(storageKey, initialValue);
+      if (allowedValues.includes(storedValue)) {
+        return storedValue;
+      }
+      try {
+        storage.setItem(storageKey, defaultValue);
+      } catch {
+        // Ignore storage write failures (e.g., read-only or quota exceeded)
+      }
+      return defaultValue;
+    },
+  };
 
   return atomWithStorage<T>(key, defaultValue, sanitizedStorage);
 };
@@ -109,7 +112,9 @@ export const busStopAtom = atom<BusStopValue, [BusStopValue], void>(
   }
 );
 // スケジュールタイプは日付によって変わるので通常のatomを使用
-export const scheduleTypeAtom = atom<ScheduleTypeValue>(getInitialScheduleType());
+export const scheduleTypeAtom = atom<ScheduleTypeValue>(
+  getInitialScheduleType()
+);
 
 // TypeScriptのための型
 type TimeData = {
@@ -132,7 +137,9 @@ const scheduleKeyAtom = atom<ScheduleKey>((get) => {
 
   // UI上の「from NAIST」は時刻表データの "to" を参照する
   const canonicalDirection =
-    direction === DIRECTION.FROM_NAIST ? DIRECTION.TO_NAIST : DIRECTION.FROM_NAIST;
+    direction === DIRECTION.FROM_NAIST
+      ? DIRECTION.TO_NAIST
+      : DIRECTION.FROM_NAIST;
 
   return `${canonicalDirection}-${busStop}-${scheduleType}` as ScheduleKey;
 });

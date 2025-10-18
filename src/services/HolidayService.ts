@@ -7,12 +7,12 @@ export default class HolidayService {
   getToday(): Date {
     return new Date();
   }
-  
+
   checkIfTodayIsHoliday(): boolean {
     const today = this.getToday();
     return Holiday.isHoliday(today);
   }
-  
+
   checkIfTodayIsWeekend(): boolean {
     const today = this.getToday();
     const day = today.getDay();
