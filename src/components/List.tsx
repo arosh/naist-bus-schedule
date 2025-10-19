@@ -20,11 +20,11 @@ function List({ scheduleMap }: Props) {
               {key}
             </div>
             <div className="p-3">
-              <ul className="flex list-none flex-wrap gap-3">
+              <ul className="flex flex-wrap gap-3">
                 {scheduleMap[key].map((item) => (
                   <li
                     key={item}
-                    className="inline-block rounded-full border border-gray-300 bg-white px-3 py-1 font-medium shadow transition-colors hover:bg-gray-100"
+                    className="rounded-full border border-gray-300 bg-white px-3 py-1 font-medium shadow transition-colors hover:bg-gray-100"
                   >
                     {item}
                   </li>

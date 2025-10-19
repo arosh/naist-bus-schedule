@@ -26,3 +26,4 @@ dist-ssr
 
 /src/resources/data.json
 /test-results/
+/dev-dist/

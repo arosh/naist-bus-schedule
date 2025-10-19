@@ -13,7 +13,7 @@ const Next = ({ exist, hours = 0, minutes = 0, seconds = 0 }: Props) => {
   return (
     <div className="mb-6">
       <h2 className="mb-2 text-xl font-bold">次発バスまでの時間</h2>
-      <div className="overflow-hidden rounded-lg border border-gray-300">
+      <div className="overflow-hidden rounded border border-gray-300">
         <div className="p-4">
           <div className="flex items-center justify-center font-mono text-4xl font-bold">
             {pad(hours)}

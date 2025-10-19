@@ -34,7 +34,7 @@ function Form({
           <select
             id="direction"
             name="direction"
-            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:outline-none"
+            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             value={direction}
             onChange={(e) => {
               onDirectionChange(e.target.value as DirectionValue);
@@ -55,7 +55,7 @@ function Form({
         <div className="sm:inline-block sm:w-2/3">
           <select
             id="busStop"
-            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:outline-none"
+            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             value={busStop}
             onChange={(e) => {
               onBusStopChange(e.target.value as BusStopValue);
@@ -81,7 +81,7 @@ function Form({
           <select
             id="scheduleType"
             value={scheduleType}
-            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:outline-none"
+            className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             onChange={(e) => {
               onScheduleTypeChange(e.target.value as ScheduleTypeValue);
             }}
