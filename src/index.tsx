@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import * as serviceWorker from './registerServiceWorker';
 import App from './containers/App';
 import './assets/css/theme.css';
 
@@ -21,5 +20,3 @@ if (rootElement) {
     </StrictMode>
   );
 }
-
-serviceWorker.unregister();

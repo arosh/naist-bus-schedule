@@ -24,6 +24,10 @@ No. [#32](https://github.com/arosh/naist-bus-schedule/pull/34) includes `data.js
 
 Yes. First install browser binaries with `npx playwright install`, then launch the suite with `npm run e2e`. The command spins up the Vite dev server on port 3000 automatically and runs the Playwright checks headlessly.
 
+## Progressive Web App
+
+The production build now bundles a service worker through `vite-plugin-pwa` so the timetable keeps working offline. Run `npm run build` followed by `npm run preview -- --host 0.0.0.0 --port 4173` to inspect the generated PWA locally, and use your browser's Application panel to unregister the service worker when testing changes.
+
 ## Contributors
 
 * [@speedcell4](https://github.com/speedcell4) added timetables between Tomigaoka station and NAIST.
