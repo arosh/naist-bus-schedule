@@ -66,7 +66,7 @@ const scenarios: Scenario[] = [
     'NAIST行き / To NAIST',
     '高の原駅 / Takanohara Station',
     '休日ダイヤ / weekend',
-    '08:02',
+    '08:03',
     '08:45',
   ],
   [
@@ -80,7 +80,7 @@ const scenarios: Scenario[] = [
     'NAIST行き / To NAIST',
     '登美ヶ丘駅 / Tomigaoka Station',
     '休日ダイヤ / weekend',
-    '08:21',
+    '08:22',
     '08:40',
   ],
   [
