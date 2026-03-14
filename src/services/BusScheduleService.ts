@@ -8,6 +8,6 @@ export default class BusScheduleService {
     if (data) {
       return data;
     }
-    throw new Error(`Schedule not found for key: ${key}`);
+    throw new Error(`Schedule not found for key: ${String(key)}`);
   }
 }
