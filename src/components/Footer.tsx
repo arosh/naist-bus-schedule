@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div className="text-center text-sm text-gray-600">
-      <p className="mb-2">Last modified: 2025-02-22</p>
+      <p className="mb-2">Last modified: 2026-03-14</p>
       <p>
         Icons made by{' '}
         <a
