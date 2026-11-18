@@ -9,7 +9,9 @@ import BusScheduleService, {
   type ScheduleKey,
 } from '../services/BusScheduleService';
 import SplitScheduleService from '../services/SplitScheduleService';
-import TimeDiffService from '../services/TimeDiffService';
+import TimeDiffService, {
+  type UpcomingBus,
+} from '../services/TimeDiffService';
 import HolidayService from '../services/HolidayService';
 
 // 定数は凍結してイミュータブルにする
@@ -111,6 +113,7 @@ export const busStopAtom = atom<BusStopValue, [BusStopValue], void>(
     set(busStopStorageAtom, safeBusStop);
   }
 );
+
 // スケジュールタイプは日付によって変わるので通常のatomを使用
 export const scheduleTypeAtom = atom<ScheduleTypeValue>(
   getInitialScheduleType()
@@ -173,6 +176,13 @@ export const nextTimeAtom = atom<NextTimeResult>((get) => {
   const { hours, minutes, seconds } = get(nowAtom);
   const timeTable = get(timeTableAtom);
   return timeDiffService.getNext(hours, minutes, seconds, timeTable);
+});
+
+// 次発〜4本目までのバス一覧と終バス残本数を計算するatom
+export const nextBusesAtom = atom<UpcomingBus[]>((get) => {
+  const { hours, minutes, seconds } = get(nowAtom);
+  const timeTable = get(timeTableAtom);
+  return timeDiffService.getNextList(hours, minutes, seconds, timeTable);
 });
 
 // 時刻表をマップに変換するatom
