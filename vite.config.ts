@@ -5,18 +5,20 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/naist-bus-schedule/',
   plugins: [
     react(),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
-        enabled: true
+        enabled: true,
       },
       manifest: {
         name: 'NAIST バス時刻表',
         short_name: 'NAIST バス時刻表',
-        start_url: '.',
+        start_url: '/naist-bus-schedule/',
+        scope: '/naist-bus-schedule/',
         display: 'standalone',
         theme_color: '#000000',
         background_color: '#ffffff',
